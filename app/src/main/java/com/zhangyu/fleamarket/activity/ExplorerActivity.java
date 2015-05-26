@@ -1,4 +1,4 @@
-package com.zhangyu.fleamarket;
+package com.zhangyu.fleamarket.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,6 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.zhangyu.fleamarket.NavigationDrawerFragment;
+import com.zhangyu.fleamarket.R;
 
 
 public class ExplorerActivity extends ActionBarActivity

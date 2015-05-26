@@ -1,4 +1,94 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//from http://www.egeek.me/2013/12/07/gradle-auto-detect-android-sdk-and-build-tools-versions/
+import org.codehaus.groovy.runtime.StackTraceUtils
+
+int[] sdksAvailable() {
+    def sdks = new ByteArrayOutputStream()
+    def androidSdkDir = androidSDKDir()
+    exec {
+//        workingDir androidSdkDir + "/tools"
+//        commandLine './android', 'list'
+        workingDir 'D://android_dev_tools//sdk//tools'
+        commandLine 'cmd', '/c', './android', 'list'
+        standardOutput = sdks
+    }
+    sdks = sdks
+    // get the output
+            .toString()
+    // split to strings
+            .split('\n')
+    // leave only strings with API levels
+            .findAll { it ==~ /\s*API level:\s*(\d+).*/ }
+    // extract the API levels
+            .collect { (it =~ /\s*API level:\s*(\d+).*/)[0][1].toInteger() }
+    // sort from highest to lowest
+            .sort({ a, b -> b <=> a })
+    sdks
+}
+
+int getSdkVersion(int defaultSdk) {
+    try {
+        def sdks = sdksAvailable()
+        if (sdks.contains(defaultSdk)) {
+            println "Use default SDK " + defaultSdk
+            defaultSdk
+        } else {
+            println "Default SDK not found, use highest found SDK " + sdks[0]
+            sdks[0]
+        }
+    } catch (any) {
+        println "Exception while determining highest SDK. Using default SDK " +
+                defaultSdk
+        StackTraceUtils.sanitize(any).printStackTrace()
+        defaultSdk
+    }
+}
+
+String androidSDKDir() {
+    def androidExecPath = new ByteArrayOutputStream()
+    try {
+        exec {
+            commandLine 'which', 'android'
+            standardOutput = androidExecPath
+        }
+        println "find android exec path: " + androidExecPath.toString()
+        file(androidExecPath.toString().trim()).getParentFile().getParentFile()
+    } catch (ExecException) {
+        exec {
+            commandLine 'grep', 'sdk.dir', 'local.properties'
+            standardOutput = androidExecPath
+        }
+        println "find android sdk with local.properties: " + androidExecPath.toString()
+        file(androidExecPath.toString().trim().split('=')[1])
+    }
+}
+
+String[] buildToolsAvailable() {
+    println "sdk dir: " + androidSDKDir()
+    def buildToolsDir = new File(androidSDKDir(), "build-tools")
+    buildToolsDir.list([accept: { d, f -> !f.contains("android") }] as FilenameFilter).sort { a, b -> b <=> a }
+}
+
+String getBuildToolsVersion(String defaultBuildTools) {
+    try {
+        def buildToolsVersions = buildToolsAvailable()
+        if (buildToolsVersions.contains(defaultBuildTools)) {
+            println "Use default build tools " + defaultBuildTools
+            defaultBuildTools
+        } else {
+            println "Default build tools not found, use highest found build tools " +
+                    buildToolsVersions[0]
+            buildToolsVersions[0]
+        }
+    } catch (any) {
+        println "Exception while determining latest build tools. Using default build tools " +
+                defaultBuildTools
+        StackTraceUtils.sanitize(any).printStackTrace()
+        defaultBuildTools
+    }
+}
+
+ext.compileSdkVersion = getSdkVersion(19)
+ext.buildToolsVersion = getBuildToolsVersion("19.1.0")
 
 buildscript {
     repositories {
