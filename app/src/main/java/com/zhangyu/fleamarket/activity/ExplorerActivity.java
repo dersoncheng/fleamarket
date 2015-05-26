@@ -13,8 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zhangyu.fleamarket.NavigationDrawerFragment;
+import com.zhangyu.fleamarket.fragment.NavigationDrawerFragment;
 import com.zhangyu.fleamarket.R;
+import com.zhangyu.fleamarket.fragment.PictureListFragment;
 
 
 public class ExplorerActivity extends ActionBarActivity
@@ -51,9 +52,15 @@ public class ExplorerActivity extends ActionBarActivity
   public void onNavigationDrawerItemSelected(int position) {
     // update the main content by replacing fragments
     FragmentManager fragmentManager = getSupportFragmentManager();
-    fragmentManager.beginTransaction()
-      .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-      .commit();
+    if (position == 0) {
+      fragmentManager.beginTransaction()
+        .replace(R.id.container, PictureListFragment.newInstance())
+        .commit();
+    } else {
+      fragmentManager.beginTransaction()
+        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+        .commit();
+    }
   }
 
   public void onSectionAttached(int number) {
@@ -137,7 +144,7 @@ public class ExplorerActivity extends ActionBarActivity
       View rootView = null;
       int sectionNumber = this.getArguments().getInt(ARG_SECTION_NUMBER);
       if (sectionNumber == 1) {
-        rootView = inflater.inflate(R.layout.fragment_tab1, container, false);
+        rootView = PictureListFragment.newInstance().getRootView();
       } else if (sectionNumber == 2) {
         rootView = inflater.inflate(R.layout.fragment_tab2, container, false);
       } else if (sectionNumber == 3) {
