@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\code\FleaMarket\external\volley\res"/><source path="D:\code\FleaMarket\external\volley\build\generated\res\rs\release"/><source path="D:\code\FleaMarket\external\volley\build\generated\res\generated\release"/></dataSet><dataSet config="release"><source path="D:\code\FleaMarket\external\volley\src\release\res"/></dataSet><mergedItems/></merger>

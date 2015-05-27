@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.etsy.android.grid.StaggeredGridView;
 import com.zhangyu.fleamarket.R;
-import com.zhangyu.fleamarket.Utils.ImageDownloader;
+import com.zhangyu.fleamarket.utils.ImageDownloader;
 
 import java.util.HashMap;
 import java.util.List;

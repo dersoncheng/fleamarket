@@ -24,4 +24,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.1.0'
     compile 'com.etsy.android.grid:library:1.0.5'
     compile 'com.android.support:support-v4:22.1.0'
+    compile project(':external:volley')
 }
