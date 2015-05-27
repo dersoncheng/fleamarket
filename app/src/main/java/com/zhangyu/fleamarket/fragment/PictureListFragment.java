@@ -7,8 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
-import com.etsy.android.grid.StaggeredGridView;
 import com.zhangyu.fleamarket.R;
 import com.zhangyu.fleamarket.adapter.PictureListAdapter;
 
@@ -120,9 +120,9 @@ public class PictureListFragment extends Fragment {
       data.add(map);
     }
 
-    StaggeredGridView gridView = (StaggeredGridView) rootView.findViewById(R.id.grid_view);
+    ListView gridView = (ListView) rootView.findViewById(R.id.grid_view);
     PictureListAdapter listAdapter =
-      new PictureListAdapter(this.getActivity().getApplicationContext(), data, gridView);
+      new PictureListAdapter(this.getActivity().getApplicationContext(), data);
     gridView.setAdapter(listAdapter);
     return rootView;
   }

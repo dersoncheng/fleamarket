@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-import com.etsy.android.grid.StaggeredGridView;
 import com.zhangyu.fleamarket.R;
 
 import java.util.HashMap;
@@ -35,7 +34,7 @@ public class PictureListAdapter extends BaseAdapter {
 //  private ImageDownloader imageDownloader;
   private ImageLoader imageLoader;
 
-  public PictureListAdapter(Context context, List<HashMap<String, Object>> dataList, StaggeredGridView gridView) {
+  public PictureListAdapter(Context context, List<HashMap<String, Object>> dataList) {
     this.mContext = context;
     this.dataList = dataList;
     RequestQueue mQueue = Volley.newRequestQueue(context);
