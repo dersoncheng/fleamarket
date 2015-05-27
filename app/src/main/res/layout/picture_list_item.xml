@@ -14,7 +14,7 @@
         android:id="@+id/ItemTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/ItemImage"
+        android:layout_below="@id/ItemImage"
         android:textSize="25sp" >
     </TextView>
 
@@ -22,7 +22,6 @@
         android:id="@+id/ItemText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/ItemImage"
         android:layout_below="@id/ItemTitle"
         android:textSize="15sp" >
     </TextView>
