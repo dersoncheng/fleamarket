@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.actionbarsherlock.app.SherlockFragment;
 import com.zhangyu.fleamarket.R;
 import com.zhangyu.fleamarket.adapter.PictureListAdapter;
 
@@ -24,7 +25,7 @@ import java.util.List;
  * Use the {@link PictureListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PictureListFragment extends Fragment {
+public class PictureListFragment extends SherlockFragment {
 
   private OnFragmentInteractionListener mListener;
   private View rootView;
