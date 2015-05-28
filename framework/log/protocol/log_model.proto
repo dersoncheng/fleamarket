@@ -1,0 +1,16 @@
+package com.wandoujia.log.model;
+
+option java_package = "com.wandoujia.log.toolkit.model";
+
+message LaunchPackage {
+    optional LaunchSourcePackage sourcePackage = 1;
+    optional string action = 2;
+    optional string activity = 3;
+    optional string data = 4;
+    optional string reason = 5;
+}
+
+message LaunchSourcePackage {
+    optional string launch_source = 1 [default = "UNKNOWN"];
+    optional string launch_keyword = 2;
+}

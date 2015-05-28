@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="app_name">base</string>
+    <!-- date utils -->
+    <string name="today">今天</string>
+    <string name="yesterday">昨天</string>
+    <string name="days_ago">%1$d天前</string>
+    <string name="days_later">%1$d天后</string>
+
+    <string name="num_split_level_base">4</string>
+    <string name="num_split_level_base_one">万</string>
+    <string name="num_split_level_base_two">亿</string>
+    <string name="num_split_level_base_three">万亿</string>
+
+    <string name="sunday">周日</string>
+    <string name="monday">周一</string>
+    <string name="tuesday">周二</string>
+    <string name="wednesday">周三</string>
+    <string name="thursday">周四</string>
+    <string name="friday">周五</string>
+    <string name="saturday">周六</string>
+    <string name="last_week_prefix">上</string>
+    <string name="one_month">一个月</string>
+    <string name="one_week">一周</string>
+    <string name="two_weeks">两周</string>
+    <string name="ago">前</string>
+
+    <string name="seperator_mark">、</string>
+    <string name="and_so_on">等</string>
+</resources>

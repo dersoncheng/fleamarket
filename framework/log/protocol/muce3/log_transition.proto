@@ -1,0 +1,281 @@
+package muce.event.client;
+
+import "log_event_package.proto";
+
+option java_package = "com.wandoujia.logv3.model.packages";
+option optimize_for = LITE_RUNTIME;
+
+// 首页卡片信息包
+message StartpageCardPackage {
+    // feed name
+    optional string startpage_card_feed_name = 1;
+    // 模版
+    optional string startpage_card_template = 2;
+    // 首页标识的卡片id
+    optional string startpage_card_id = 3;
+    // 下发了哪些条目
+    optional string startpage_sub_card_list = 4;
+}
+
+// 订单信息
+message OrderPackage {
+    // 订单 ID
+    optional int32 order_id = 1;
+    // 关联 ID
+    optional int32 link_order_id = 2;
+    // 联运游戏 ID
+    optional int32 app_key_id = 3;
+    // 默认支付方式
+    optional string default_charge_type = 4;
+    // 默认支付金额（单位：分）
+    optional int32 default_money = 5;
+    // 订单金额（单位：分）
+    optional int32 order_money = 6;
+    // 支付方式
+    optional string charge_type = 7;
+    // 支付金额（单位：分）
+    optional int32 money = 8;
+    // 订单结果
+    optional string trade_status = 9;
+}
+
+// 剩余内存、存储相关信息
+message ResidualMemoryPackage {
+   // 剩余空间，单位为 byte,内存的大小
+   optional int64 residual_memory_size = 1;
+   // 剩余空间，单位为 byte,SD 卡槽一的大小
+   optional int64 residual_sdsize1 = 2;
+   // 剩余空间，单位为 byte,SD 卡槽二的大小
+   optional int64 residual_sdsize2 = 3;
+}
+
+// 搜索查询基础信息，owner by lidahai
+message QueryMetaInfoPackage {
+    // 搜索词
+    required string query = 1;
+    // search 自有的 session 判断
+    optional string session_id = 2;
+    // search api 版本号
+    optional int32 api_version = 3;
+    // 小流量实验 id
+    optional int32 exp_id = 4;
+    // 分页第一个排序数
+    optional int32 start_index = 5;
+    // limit
+    optional int32 limit_size = 6;
+    // query mode
+    optional string mode = 7;
+    // query from
+    optional ViewLogPackage from_package = 8;
+    // refer
+    optional ViewLogPackage refer_package = 9;
+    // query 纠错
+    repeated string corrected_query = 10;
+    // 是否敏感词/黄反 query
+    optional bool is_sensitive = 11;
+}
+
+// IAS 独有的 Query 信息，owner by lidahai
+message IASQueryInfoPackage {
+    // IAS 分桶信息
+    message IASBucketPackage {
+        optional int32 user_bucket_id = 1;
+        optional int32 session_buicket_id = 2;
+    }
+    // IAS 请求的分桶信息
+    optional IASBucketPackage ias_bucket_package = 1;
+    // 请求的结果类型；type(MIXED, APPS, VIDEOS, MUSIC, UNI, etc; sub_type: MUSIC.SONGS, UNI.NEWS, etc)
+    optional ContentPackage ias_request_content_package = 2;
+}
+
+// IAS 独有的 search result 信息，owner by lidahai
+message IASSearchResultPackage {
+    // IAS QueryUnderstanding结果
+    message QueryUnderstandingScore {
+        required string content_vertical_type = 1;
+        // query 打分
+        required float score = 2;
+    }
+    // section 结果; 当前 IAS v2 独有
+    message SectionResultPackage {
+        // APP, WALLPAPERS, VIDEOS, MIXED, etc.
+        optional string section_type = 1;
+        // section 标题
+        optional string title = 2;
+        // item 个数
+        optional int32 item_num = 3;
+    }
+    repeated QueryUnderstandingScore query_understanding_result = 1;
+    repeated SectionResultPackage section_result = 2;
+    // item id
+    optional string item_id = 3;
+}
+
+// 清理结果信息，owner by xubin
+message CleanResultPackage {
+    // 清理的id
+    optional string clean_id = 1;
+    // 类型
+    optional string type = 2;
+    // (size在ios是关键字)，单位是kb
+    optional uint64 size = 3;
+    // 清理出的应用的名字
+    optional string content_id = 4;
+    // 标题
+    optional string title = 5;
+    // recommend
+    optional int32 recommend = 6;
+    // read_day
+    optional int32 read_day = 7;
+    // path
+    optional string path = 8;
+}
+
+// 触发的信息
+message TriggerPackage {
+    // trigger的类型
+    optional string type = 1;
+    // trigger source
+    optional string source = 2;
+}
+
+// 服务器信息
+message ServerHostPackage {
+    // 主机地址，格式xxx.xxx.xxx.xxx，不够3位数不补0
+    optional string host_ip = 1;
+    // 主机名字
+    optional string host_name = 2;
+}
+
+// 通知栏信息
+message NotificationPackage {
+    // notification的文案
+    optional string title = 1;
+    // 由发送的用户群、内容、时间、发送人决定的唯一id
+    optional string id = 2;
+    // 通知栏类型
+    optional string type = 3;
+    // 通知栏样式
+    optional string style = 4;
+    // 通知栏点击的url
+    optional UrlPackage landing_page = 5;
+}
+
+// 搜索结果信息
+message SearchResultPackage {
+    // 是否有人工干预
+    optional bool adjusted = 1 [default = false];
+    // item result
+    repeated ContentPackage search_result_package = 2;
+}
+
+// 洗白白信息
+message XibaibaiResultPackage {
+    optional string id = 1;
+}
+
+// 统计信息包
+message StatisticsPackage {
+    optional string id = 1;
+}
+
+// 对于服务端的服务线的描述。如IAS服务，startpage服务等等。
+message ServicePackage {
+    optional string name = 1;
+}
+
+message SectionCardPackage {
+    // section 卡片的 id
+    optional string section_id = 1;
+    // section 卡片的标题
+    optional string section_title = 2;
+    // section 卡片在卡片上的排序位置
+    optional int32 section_index = 3;
+    // section card 的id
+    optional string section_card_id = 4;
+    // 程序用
+    optional string section_extra = 5;
+}
+
+message GroupPackage {
+    optional string id = 1;
+}
+
+message TopicPackage {
+    optional string id = 1;
+}
+
+message TabPackage {
+    // tab 的命名
+    optional string name = 1;
+    // 未读的数字
+    optional string unread_num = 2;
+}
+
+message SubscribePublisherPackage {
+  optional string publisher_type = 1;
+  optional string publisher_id = 2;
+  optional string publisher_nick = 3;
+  optional string publisher_subscribedCount = 4;
+  optional bool publisher_subscribed = 5;
+  optional bool publisher_defaultSelected = 6;
+}
+
+message SubscribeSubsetPackage {
+  optional string itemlistType = 1;
+  optional string subset_title = 2;
+  optional string subset_type = 3;
+  optional string subset_id = 4;
+  optional string subset_createTime = 5;
+  optional string subset_updateTime = 6;
+  optional SubscribePublisherPackage publisher = 7;
+}
+
+message SubscribeItemPackage {
+  optional string item_type = 1;
+  optional string item_id = 2;
+  optional string item_createTime = 3;
+  optional string item_updateTime = 4;
+  optional string item_feedName = 5;
+}
+
+message FlingEvent {
+    enum FlingDirection {
+        UP = 0;// 向上
+        DOWN = 1;// 向下
+        LEFT = 2;// 向左
+        RIGHT = 3;// 向右
+    }
+    // 打在View身上的Log
+    optional ViewLogPackage view_log_package = 1;
+    optional FlingDirection fling_direction = 2;
+    // 各个业务自己的 package
+    optional ExtraPackage extra_package = 3;
+}
+
+message SystemEvent {
+    // 由不同业务定义的debug字符串
+    optional string debug = 1;
+    // 各个业务自己的 package
+    optional ExtraPackage extra_package = 2;
+}
+
+message NotificationEvent {
+    enum Action {
+        SHOW = 0;// 展示
+        CLICK = 1;// 点击
+        DISMISS = 2;// 忽略
+        EXPAND = 3;// 拒绝
+    }
+
+    // 在通知栏上的操作
+    optional Action action = 1;
+    // 通知标题
+    optional string title = 2;
+    // 通知栏样式
+    optional string type = 3;
+    // 通知栏跳往的页面
+    optional UrlPackage landing_page = 4;
+    // 各个业务自己的 package
+    optional ExtraPackage extra_package = 5;
+}

@@ -1,0 +1,155 @@
+package muce.event.client;
+
+option java_package = "com.wandoujia.logv3.model.packages";
+option optimize_for = LITE_RUNTIME;
+
+// ID信息
+message IdPackage {
+    // major id，如果是移动设备id=udid,如果是pc设备id=pcid
+    required string identity = 1;
+    // 移动设备的 id
+    optional string udid = 2;
+    // PC 的 id
+    optional string pcid = 3;
+}
+
+// client 信息，每条 log 都需要带
+message ClientPackage {
+    // 豌豆荚产品线中的客户端的名称
+    enum Product {
+        WINDOWS = 0;// windows
+        ANDROID = 1;// p4
+        USB_CONNECTION = 2;// usb连接引擎
+        GAME_SDK = 3;// 游戏sdk
+        MARIO_SDK = 4;// mario sdk
+        IOS = 5;// IOS版
+        ADS = 6;// 广告
+    }
+    // 设备平台的名称
+    enum Platform {
+        ANDROID_PHONE = 0;
+        ANDROID_TABLET = 1;
+        IPHONE = 2;
+        IPAD = 3;
+        PC = 4;
+    }
+    // 产品的语言
+    enum Language {
+        SIMPLE_CHINESE = 0;
+        ENGLISH = 1;
+        THAI = 2;
+    }
+    // 产品
+    optional Product product = 1;
+    // 设备平台
+    optional Platform platform = 2;
+    // 首次安装时渠道号
+    optional string first_source = 3;
+    // 产品当前的渠道号
+    optional string last_source = 4;
+    // 此时设备上的产品渠道来自 PC 的渠道号
+    optional string windows_source = 5;
+    // 产品的版本名, ex. 4.6.1
+    optional string version_name = 6;
+    // 产品的版本号
+    optional int32 version_code = 7;
+    // 客户端的语言版本(如 thai 表示泰语版本)
+    optional string locale = 8;
+    // 客户端选择的语言
+    optional Language language = 9;
+    // 内部版本号
+    optional int32 internal_version_code = 10;
+    // 客户端第一次安装的时间(使用Unix timestamp)
+    optional int64 create_date = 11;
+}
+
+// 网络状态信息
+message NetworkPackage {
+    // 网络类型
+    enum Type {
+        UNKNOWN_TYPE = 0; // 网络情况未知
+        WIFI = 1; // 无线网络
+        MOBILE = 2; // 移动网络
+    }
+    // 移动网络类型
+    enum Subtype {
+        UNKNOWN = 0; // 网络情况未知
+        GPRS = 1; // GPRS
+        EDGE = 2; // EDGE
+        UMTS = 3; // UMTS
+        CDMA = 4; // CDMA: Either IS95A or IS95B
+        EVDO_0 = 5; // EVDO revision 0
+        EVDO_A = 6; // EVDO revision A
+        CDMA_1xRTT = 7; // 1xRTT
+        HSDPA = 8; // HSDPA
+        HSUPA = 9; // HSUPA
+        HSPA = 10; // HSPA
+        IDEN = 11; // iDen
+        EVDO_B = 12; // EVDO revision B
+        LTE = 13; // LTE
+        EHRPD = 14; // eHRPD
+        HSPAP = 15; // HSPA+
+    }
+    // 当前网络类型
+    optional Type type = 1;
+    // 当前移动网络类型，如果网络类型为wifi，则为unknown
+    optional Subtype sub_type = 2;
+    // 运营商(移动、联通等)
+    optional string isp = 3;
+    // 用户的外网 IP (服务端用)，格式xxx.xxx.xxx.xxx，不够3位数不补0
+    optional string remote_ip = 4;
+}
+
+// 注册帐户信息
+message AccountPackage {
+    // 注册帐号id
+    optional string uid = 1;
+}
+
+// 时间信息
+message TimePackage {
+    // Event 发生时的本地距离启动的时间（保证log传输过程中单增）
+    optional int64 local_elapsed_time = 1;
+    // Event 发生时用户设备的本地 utc 时间戳
+    optional int64 local_timestamp = 2;
+    // 服务器端接收日志的 utc 时间戳
+    optional int64 server_timestamp = 3;
+}
+
+// P4启动来源信息
+message LaunchSourcePackage {
+    enum Source {
+        UNKNOWN = 0; //来源未知
+        WELCOME = 1; // 正常进入欢迎页
+        SHORTCUT = 2; // 快捷方式
+        WIDGET = 3; // 桌面控件
+        MARKET = 4; // 监控市场跳转
+        START = 5;
+        NOTIFICATION_DOWNLOAD = 6;
+        NOTIFICATION_SELF_UPGRADE = 7;
+        NOTIFICATION_XIBAIBAI = 8;
+        NOTIFICATION_CLEAN = 9;
+        NOTIFICATION_PUSH = 10;
+        NOTIFICATION_PUSH_APP = 11;
+        NOTIFICATION_APP = 12;
+        NOTIFICATION_VIDEO = 13;
+        NOTIFICATION_EBOOK = 14;
+        NOTIFICATION_WALLPAPER = 15;
+        NOTIFICATION_FREE_TRAFFIC = 16;
+        NOTIFICATION_SYNC = 17;
+    }
+    // 启动来源 (现有welcome, shortcut, widget, market)
+    optional Source source = 1;
+    // 启动的关键词，如 通知栏 中，可以带有通知栏的内容作为 keyword
+    optional string keyword = 2;
+}
+
+// 每次上报时候都需要带上的信息
+message CommonPackage {
+    required IdPackage id_package = 1;
+    required ClientPackage client_package = 2;
+    required TimePackage time_package = 3;
+    optional NetworkPackage network_package = 4;
+    optional AccountPackage account_package = 5;
+    optional LaunchSourcePackage launch_source_package = 6;
+}

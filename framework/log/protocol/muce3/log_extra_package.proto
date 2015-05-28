@@ -1,0 +1,167 @@
+package muce.event.client;
+
+option java_package = "com.wandoujia.logv3.model.packages";
+option optimize_for = LITE_RUNTIME;
+
+// 内容信息包
+message ContentPackage {
+    enum Type {
+        APP = 0; //应用
+        VIDEO = 1; //视频
+        EBOOK = 2; //电子书
+        GAME = 3; //游戏
+        WALLPAPER = 4; //壁纸
+        PERSON = 5; //人物
+        MUSIC_SONG = 6; //歌曲
+        MUSIC_ALBUM = 7; //音乐专辑
+        MUSIC_PLAY_LIST = 8; //音乐播放列表
+        MUSIC_RANKING_LIST = 9; //音乐榜单
+        MUSIC_RANK_ISSUE = 10; //音乐某期榜单
+        SINGER = 11; //歌手
+        IAS = 12; //in app search
+    }
+
+    // 内容的唯一识别
+    optional string identity = 1;
+    // 内容的标题，很多时候就是内容的名字
+    optional string title = 2;
+    // 内容的类型，app,game,video,wallpaper,ebook
+    optional Type type = 3;
+    // 内容的子类型，如类型是 video ,子类型是 movie 等等
+    optional string sub_type = 4;
+    // 是否是付费的
+    optional bool is_free = 5;
+}
+
+// 资源信息包
+message ResourcePackage {
+    enum Type {
+        WDJ_HOSTED = 0; // wdj host 的资源
+        PARTNER_COMMON = 1; // 合作方的通用格式资源
+        PARTNER_PRIVATE = 2; // 合作方的私有格式资源
+    }
+    // 资源id
+    optional string identity = 1;
+    // 资源类型
+    optional Type type = 2;
+    // 提供方名称
+    optional string provider_name = 3;
+    // 应用的播放地址标识。相对于我们自己host的内容，这里是去对方的应用去播放的对方的地址。
+    optional string app_uri = 4;
+    // 是否可以下载
+    optional bool can_download = 5;
+}
+
+// 卡片信息
+message CardPackage {
+    // 卡片的id
+    optional string identity = 1;
+    // 描述的是卡片在卡片上的情况，主卡片的id
+    optional string parent_id = 2;
+    // card的类型 (bannercard丨内容card丨分类card)
+    optional string type = 3;
+    // card的子类型
+    optional string sub_type = 4;
+    // card的 tag
+    optional string tag = 5;
+    // 主状态标签，如，首发，礼包，新品，设计奖;只会有一个标签
+    optional string status = 6;
+    // 用次状态标签，如，优秀应用开发者，推广，支持豌豆币；多个标签用英文逗号隔开；视频、电子书次状态标签，如，追追看
+    optional string sub_status = 7;
+    // 卡片上展示内容的 content id list.如果是一个内容，则为 0 或者是为 空；如果是多个内容，用来记录卡片的个数
+    optional int32 num = 8;
+}
+
+// 打开方式包
+message OpenTypePackage {
+    enum OpenType {
+        WDJ = 0; // wdj 自己（播放器、下载任务管理器）处理资源
+        SYSTEM = 1; // 开系统的 action picker
+        IAS_APP = 2; // 合作方 app 打开
+        IAS_HTML5 = 3; // 合作方 html5 打开
+    }
+    enum Mode {
+        ONLINE = 0;
+        LOCAL = 1;
+    }
+    // 打开方式
+    optional OpenType type = 1;
+    // 打开模式
+    optional Mode mode = 2;
+    // 提供方的应用名
+    optional string open_provider_package_name = 3;
+}
+
+// 应用状态信息
+message AppStatusPackage {
+    // 是否是预下载
+    optional bool is_predownload = 1;
+    // 是否已安装
+    optional bool is_installed = 2;
+    // 应用的版本名
+    optional string app_version_name = 3;
+    // 应用的版本号
+    optional int32 app_version_code = 4;
+}
+
+// 设备信息
+message DevicePackage {
+    // 系统平台 (p4默认android)
+    optional string os = 1;
+    // 平台版本
+    optional string os_version = 2;
+    // 平台sdk版本
+    optional int32 sdk_int = 3;
+    // 机型
+    optional string model = 4;
+    // 品牌
+    optional string brand = 5;
+    // 是否root
+    optional bool is_root = 6;
+    // rom的版本
+    optional string rom_version = 7;
+    // rom的名称
+    optional string rom_name = 8;
+    // launcher name
+    optional string launcher_name = 9;
+    // cpu型号
+    optional string cpu = 10;
+    // 设备屏幕分辩率
+    optional string screen = 11;
+    // mac 地址
+    optional string mac = 12;
+    // imei 号
+    optional string imei = 13;
+    // 位数
+    optional int32 os_bit = 14;
+    // 单位为 byte,内存的大小
+    optional int64 memory_size = 15;
+    // 单位为 byte,SD 卡槽一的大小
+    optional int64 sdcard1_size = 16;
+    // 单位为 byte,SD 卡槽二的大小
+    optional int64 sdcard2_size = 17;
+}
+
+message FeedPackage {
+    optional string identity = 1;
+    optional string name = 2;
+    optional string template = 3;
+    optional string detail = 4;
+}
+
+message ExtraPackage {
+    // owner=
+    optional CardPackage card_package = 1;
+    // owner=
+    optional DevicePackage device_package = 2;
+    // owner=
+    optional ContentPackage content_package = 3;
+    // owner=
+    optional FeedPackage feed_package = 4;
+    // owner=zhaoqi
+    optional ResourcePackage resource_package = 5;
+    // owner=
+    optional OpenTypePackage open_type_package = 6;
+    // owner=
+    optional AppStatusPackage app_status_package = 7;
+}

@@ -1,0 +1,282 @@
+package muce.event.client;
+
+option java_package = "com.wandoujia.logv3.model.packages";
+option optimize_for = LITE_RUNTIME;
+
+// Url信息
+message UrlPackage {
+    enum Vertical {
+        OTHERS = 0; // 其他
+        APP = 1; // 应用
+        SEARCH = 2; // 搜索
+        GAME = 3; // 游戏
+        VIDEO = 4; // 视频
+        MUSIC = 5; //音乐
+        WALLPAPER = 6; // 壁纸
+        EBOOK = 7; // 电子书
+        MYTHING = 8; // my thing
+        SYNC = 9; // 云同步
+        SETTING = 10;  // 设置
+        PLAYER = 11; // 播放器
+        LAUNCHER = 12; // launcher
+        STARTPAGE = 13; // 首页
+        XIBAIBAI = 14; // 洗白白
+        CLEAN = 15; // 清理
+        SUBSCRIBE = 16; // 订阅
+        COMMUNITY = 17; // 社区
+    }
+    // 链接，如"/detail/app?pn=com.wandoujia.roshan"
+    optional string url = 1;
+    // 链接缩写，不包括细节，如"/detail/app?pn="
+    optional string normalized_url = 2;
+    // 产品线，video,app,startpage...
+    optional Vertical vertical = 3;
+}
+
+// 在View上打Tag的package
+message ViewLogPackage {
+    message IndexPackage {
+        // 在 feed 上的排序位置，以 0 为开始
+        optional int32 index = 1;
+        // 在 card 上的排序位置，以 0 为开始
+        optional int32 sub_index = 2;
+    }
+    enum Element {
+        BUTTON = 1;// 按钮
+        TAB = 2; // tab
+        INPUT_BOX = 3; // 输入框
+        TEXT_LINK = 4;// 文字链接
+        CARD = 5;//卡片
+        SPINNER = 6;// spinner
+        MENU_ITEM = 7;// 菜单
+        LIST_ITEM = 8;// 列表
+        LABEL = 9;// 标签
+        PROGRESS = 10;// progress
+        BACK = 11;// 返回
+        HEADER = 12;// 头
+        SUB_ACTION = 13;// 子操作
+        POPUP_BUTTON = 14;// 弹出按钮
+        PAGE = 15;// 页面
+        ICON = 16;// ICON
+        SLIDE = 17;// slide
+        PICTURE = 18;// 图片
+        SUB_TAB = 19;// 子 Tab
+        FOOTER = 20;// 尾
+    }
+    enum Action {
+        REDIRECT = 1;// 重定向
+        EXPAND = 2;// 展开
+        SEARCH = 3;// 搜索
+        CLEAR_SEARCH_HISTORY = 4;// 清除搜索历史
+        POPUP = 5;// 弹出
+
+        SUBSCRIBE = 6;// 追追看
+        UNSUBSCRIBE = 7;// 不追了
+        DOWNLOAD_ALL = 8;// 下载全部
+        UPGRADE_ALL = 9;// 升级全部
+        OPEN_URL = 10;// 打开链接
+        PAUSE = 11;// 暂停
+        RESUME = 12;// 恢复
+        REMOVE = 13;// 移除
+        SET_WALLPAPER = 14;// 设置壁纸
+        RETRY = 15;// 重试
+
+        SHARE = 16;// 分享
+        INFORMATION = 17;// 信息
+        ZOOM = 18;// 缩放
+        CLEAR = 19;// 清除
+        FOCUS = 20;// 聚焦
+        DRAG = 21;// 拖拽
+        SET = 22;// 设置
+
+        OPEN = 23;// 打开
+        DOWNLOAD = 24;// 下载
+
+        CLOSE = 25;// 关闭
+        SELECT = 26;// 选择
+        UNSELECT = 27;// 反选
+    }
+    // url
+    optional UrlPackage url_package = 1;
+    // 元素类型
+    optional Element element = 2;
+    // 操作
+    optional Action action = 3;
+    // 点击的元素所在的最小模块。如卡片、如Feed、如ActionBar
+    optional string module = 4;
+    // 位置
+    optional IndexPackage index = 5;
+    // 元素名称
+    optional string name = 6;
+}
+
+// 点击
+message ClickEvent {
+    // 打在View身上的Log
+    optional ViewLogPackage click = 1;
+    // 上一次点击
+    optional ViewLogPackage refer_click = 2;
+    // 上一个页面的最后一次点击
+    optional ViewLogPackage from_click = 3;
+}
+
+// 展示
+message ShowEvent {
+    enum Type {
+        PAGE = 0; // 页面展示
+        CARD = 1; // 卡片展示，控件展示通用
+    }
+    // 展示 log 类型
+    optional Type type = 1;
+    // 打在View身上的Log
+    optional ViewLogPackage view = 2;
+    // 上一个页面
+    optional ViewLogPackage from_page = 3;
+    // 上一次点击
+    optional ViewLogPackage refer_click = 4;
+    // 上一个页面的最后一次点击
+    optional ViewLogPackage from_click = 5;
+}
+
+// 任务 (新发起一个task，会新建一个id,该id在整个task过程中继承，直到task结束。)
+message TaskEvent {
+    enum Status {
+        START = 0;   //开始
+        RETRY = 1;   //重试
+        END = 2;     //结束
+        PAUSE = 3;   //暂停
+        READY = 4;   //准备完成
+        PENDING = 5; //等待
+        TRIGGER = 6; //触发
+    }
+    enum Result {
+        SUCCESS  = 0; //成功
+        FAIL  = 1;    //失败
+        CANCEL = 2;  //取消
+    }
+    enum Action {
+        DOWNLOAD = 0;// 下载
+        CONNECT = 1;// 连接
+        PAY = 2;// 支付
+        TRANSFER = 3;// 传输
+        PLAY = 4;// 播放
+        READ = 5;// 阅读
+        OPEN = 6;// 打开
+        SEARCH = 7;// 搜索
+        LOGIN_IN = 8;// 登陆
+        SIGN_UP = 9;// 注册
+        CLEAR = 10;// 清理
+        UPGRADE = 11;// 升级
+        SYNC = 12;// 同步
+        SHARE = 13;// 分享
+        SELF_UPGRADE = 14;// 豌豆荚自己升级
+        ORDER = 15;// 订单
+
+        CONNECTION_SCAN_ADB = 18;// 扫瞄ADB
+        CONNECTION_GET_DEVICE_INFO = 19;// 获得设备信息
+        CONNECTION_DOWNLOAD_DRIVER = 20;// 下载启动器
+        CONNECTION_INSTALL_DRIVER = 21;// 安装启动器
+        CONNECTION_ADB_IS_ONLINE = 22;// 检查ADB是否在线
+        CONNECTION_GET_UDID = 23;// 获得UDID
+        CONNECTION_CHECK_PROXY = 24;// 检查proxy
+        CONNECTION_INSTALL_PROXY = 25;// 安装proxy
+        CONNECTION_UPGRADE_PROXY = 26;// 升级proxy
+        CONNECTION_FORWARD = 27;// 转发
+        SET_AS_WALLPAPER = 28;// 设置壁纸
+        CONNECTION_OPEN_DEBUG_VIEW = 29;// 连接打开debug
+        INSTALL = 30;// 安装
+        UNINSTALL = 31;// 卸载
+    }
+
+    // 新发起一个task，会新建一个id,该id在整个task过程中继承，直到task结束。
+    optional int32 identity = 1;
+    // task的状态，start,end,trigger,retry...
+    optional Status status = 2;
+    // task 结果（result在ios是关键字）,success,fail,cancel
+    optional Result result = 3;
+    // 任务的操作
+    optional Action action = 4;
+    // 出错信息
+    optional string error_detail = 5;
+    //
+    optional ViewLogPackage view_log_package = 6;
+}
+
+// 消费
+message ConsumptionEvent {
+    enum Type {
+        DOWNLOAD = 0; //下载
+        ONLINE_PLAY = 1; //在线播放
+        LOCAL_PLAY = 2; //本地播放
+        READ = 3; //阅读
+        SET_AS_WALLPAPER = 4; //设置壁纸
+        OPEN = 5; //打开
+        UPGRADE = 6; //升级
+        INSTALL = 7; //安装
+        UNINSTALL = 8; //卸载
+    }
+    enum Result {
+        SUCCESS = 0;   //成功
+        FAILED = 1;   //失败
+    }
+    // 消费方式
+    optional Type type = 1;
+    // 消费来源
+    optional string source = 2;
+    // 消费结果
+    optional Result result = 3;
+    // 当前页面信息
+    optional ViewLogPackage view = 4;
+}
+
+// 应用活跃
+message ApplicationActiveEvent {
+    optional string active = 1;
+}
+
+// 应用崩溃
+message ApplicationCrashEvent {
+    enum Type {
+        APP_CRASH = 0; // 应用崩溃
+        LOG_CRASH = 1; // 日志模块崩溃（已catch）
+        PLUGIN_CRASH = 2; // 插件模块崩溃
+    }
+    // 崩溃类型
+    optional Type type = 1;
+    // 崩溃具体信息
+    optional string detail = 2;
+    // 当前页面信息
+    optional ViewLogPackage view = 3;
+    // 是否为启动
+    optional bool is_launch = 4;
+    // 当前Activity
+    optional string activity = 5;
+}
+
+// 应用启动
+message ApplicationStartEvent {
+    enum Reason {
+        NEW = 0; // 一次全新的启动
+        RELOAD = 1; // 应用在打开状态刷新页面
+        RESTART = 2; // 从后台唤醒应用
+    }
+    // intent的action
+    optional string action = 1;
+    // intent进入的activity name
+    optional string activity = 2;
+    // intent的data
+    optional string data = 3;
+    // new, reload, restart to foreground
+    optional Reason reason = 4;
+}
+
+// 每次上报时候都需要带上其中一条的信息
+message EventPackage {
+    optional ClickEvent click_event = 1;
+    optional ShowEvent show_event = 2;
+    optional ApplicationActiveEvent active_event = 3;
+    optional ApplicationStartEvent start_event = 4;
+    optional ApplicationCrashEvent crash_event = 5;
+    optional TaskEvent task_event = 6;
+    optional ConsumptionEvent consumption_event = 7;
+}

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+CUR=${PWD}
+DIR=`dirname $0`
+
+bash "$DIR/../Gradle/2.2.1/bin/gradle" $@

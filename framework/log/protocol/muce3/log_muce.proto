@@ -1,0 +1,29 @@
+package muce.event.client;
+
+import "log_common_package.proto";
+import "log_event_package.proto";
+import "log_extra_package.proto";
+
+option java_package = "com.wandoujia.logv3.model.packages";
+option optimize_for = LITE_RUNTIME;
+
+message LogReportEvent {
+    // 本次事件的随机ID（操作中，客户端本地自增）
+    required uint64 local_increment_id = 1;
+    // 是否实时事件
+    optional bool real_time = 2 [default = false];
+    // 协议版本
+    optional string proto_version = 3 [default = "1.0.0"];
+    // 上报必须带的信息
+    required CommonPackage common_package = 4;
+    // 事件package
+    optional EventPackage event_package = 5;
+    // 附加信息package
+    optional ExtraPackage extra_package = 6;
+}
+
+// 用于批量发送 Event
+message LogReportBatchEvent {
+    repeated LogReportEvent event = 1;
+    optional int64 discarded_event = 2 [default = 0];
+}
