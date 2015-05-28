@@ -1,0 +1,7 @@
+# DexGuard's default settings are fine for this sample application.
+
+# We'll just display some more statistics about the processed code.
+-verbose
+
+-encryptstrings class com.google.android.gms.ads.**
+-encryptstrings class com.google.ads.**

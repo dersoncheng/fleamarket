@@ -1,0 +1,39 @@
+# We'll just display some more statistics about the processed code.
+-verbose
+
+# Encrypt strings:
+-encryptstrings class com.example.ServerRequestActivity$PinnedSSLTask
+-encryptstrings public class com.example.TrustStoreFactory {
+    java.lang.String TRUST_STORE_ASSET_NAME;
+    java.lang.String TRUST_STORE_PASSWORD;
+}
+
+-encryptstrings "https://upload.wikimedia.org/*"
+
+-encryptstrings class dexguard.util.PublicKeyTrustManager
+
+-encryptstrings "MD5"
+-encryptstrings "BKS"
+-encryptstrings "TLS"
+-encryptstrings "GET"
+-encryptstrings "X509"
+-encryptstrings "https"
+
+# Encrypt the asset file with the trust store.
+-encryptassetfiles assets/myapptruststore.bks
+
+# Encrypt classes.
+-encryptclasses com.example.TrustStoreFactory
+-encryptclasses com.example.PinnedCertificateHttpsClient
+-encryptclasses com.example.PinnedCertificateHttpClientInputStreamFactory
+-encryptclasses com.example.PinnedCertificateHttpsURLConnectionFactory
+-encryptclasses com.example.PinnedCertificateHttpsUrlConnectionInputStreamFactory
+-encryptclasses com.example.PinnedPublicKeyHttpsURLConnectionFactory
+-encryptclasses com.example.PinnedPublicKeyHttpsUrlConnectionInputStreamFactory
+-encryptclasses dexguard.util.**
+
+# Remove the logging code in the exceptions.
+-assumenosideeffects class android.util.Log {
+    public static int d(...);
+}
+

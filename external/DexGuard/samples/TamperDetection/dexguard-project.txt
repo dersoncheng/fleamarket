@@ -1,0 +1,13 @@
+# DexGuard's default settings are fine for this sample application.
+
+# We'll display some more statistics about the processed code.
+-verbose
+
+# Encrypt all strings in the class that checks the environment and sets up
+# the activity.
+-encryptstrings class com.example.HelloWorldActivity$Delegate
+
+# Encrypt the classes that check the environment, as another layer of
+# protection.
+-encryptclasses com.example.HelloWorldActivity$Delegate
+-encryptclasses dexguard.util.**

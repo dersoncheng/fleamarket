@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.alipay.android.app.pay"
+    android:versionCode="28"
+    android:versionName="9.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="4" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- 读写sd卡权限 ，埋点需要 -->
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 安全监控权限 -->
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.ut.permission.DEVICE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+
+    <permission android:name="com.ut.permission.DEVICE_STATE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <application>
+
+        <!-- sdk begin -->
+        <activity
+            android:name="com.alipay.android.mini.window.sdk.MiniLaucherActivity"
+            android:configChanges="orientation"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:theme="@style/MspAppTheme" />
+        <activity
+            android:name="com.alipay.android.mini.window.sdk.TransContainer"
+            android:configChanges="orientation"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:theme="@style/MspAppTheme" />
+        <!-- 极简收银台主界面 -->
+        <activity
+            android:name="com.alipay.android.mini.window.sdk.MiniPayActivity"
+            android:configChanges="orientation"
+            android:excludeFromRecents="true"
+            android:label="@string/msp_app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/MspAppTheme"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter android:priority="800" >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 极简收银台链接查看界面 -->
+        <activity
+            android:name="com.alipay.android.mini.window.sdk.MiniWebActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:theme="@style/MspAppTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 快捷支付服务 -->
+        <service android:name="com.alipay.android.app.MspService" />
+        <!-- UTDID -->
+        <receiver
+            android:name="com.ut.device.BQueryWhoHasOne"
+            android:exported="true"
+            android:permission="com.ut.permission.DEVICE_STATE" >
+            <intent-filter>
+                <action android:name="UT.QueryWhoHasOne" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.ut.device.BFoundIt"
+            android:exported="true"
+            android:permission="com.ut.permission.DEVICE_STATE" >
+            <intent-filter>
+                <action android:name="UT.FoundIT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- sdk end -->
+    </application>
+
+</manifest>

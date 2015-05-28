@@ -1,0 +1,17 @@
+apply plugin: 'android-library'
+
+dependencies {
+    compile 'com.android.support:support-v4:19+'
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion "$rootProject.ext.buildToolsVersion"
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}

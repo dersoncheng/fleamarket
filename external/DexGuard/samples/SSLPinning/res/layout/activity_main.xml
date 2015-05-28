@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ServerRequestActivity" >
+    <TextView
+        android:id="@+id/headerView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/header" />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button2" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button3" />
+    <TextView
+        android:id="@+id/resultHeaderView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/result_header" />
+    <ImageView
+        android:id="@+id/resultView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="@string/result" />
+
+</LinearLayout>

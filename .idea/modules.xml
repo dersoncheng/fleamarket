@@ -5,9 +5,25 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidStaggeredGrid/AndroidStaggeredGrid.iml" filepath="$PROJECT_DIR$/AndroidStaggeredGrid/AndroidStaggeredGrid.iml" />
       <module fileurl="file://$PROJECT_DIR$/FleaMarket.iml" filepath="$PROJECT_DIR$/FleaMarket.iml" />
       <module fileurl="file://$PROJECT_DIR$/FleaMarket.iml" filepath="$PROJECT_DIR$/FleaMarket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FleaMarket.iml" filepath="$PROJECT_DIR$/FleaMarket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/actionbarsherlock/actionbarsherlock.iml" filepath="$PROJECT_DIR$/external/actionbarsherlock/actionbarsherlock.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/base/base.iml" filepath="$PROJECT_DIR$/framework/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/base-config/base-config.iml" filepath="$PROJECT_DIR$/framework/base-config/base-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/external/external.iml" filepath="$PROJECT_DIR$/external/external.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/external.iml" filepath="$PROJECT_DIR$/external/external.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/fastmd5/fastmd5.iml" filepath="$PROJECT_DIR$/external/fastmd5/fastmd5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/framework.iml" filepath="$PROJECT_DIR$/framework/framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/image/image.iml" filepath="$PROJECT_DIR$/framework/image/image.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/log/log.iml" filepath="$PROJECT_DIR$/framework/log/log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/media/media.iml" filepath="$PROJECT_DIR$/framework/media/media.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/mvc/mvc.iml" filepath="$PROJECT_DIR$/framework/mvc/mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/pulltorefresh/pulltorefresh.iml" filepath="$PROJECT_DIR$/external/pulltorefresh/pulltorefresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/rpc/rpc.iml" filepath="$PROJECT_DIR$/framework/rpc/rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/shared_storage/shared_storage.iml" filepath="$PROJECT_DIR$/framework/shared_storage/shared_storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/udid/udid.iml" filepath="$PROJECT_DIR$/framework/udid/udid.iml" />
       <module fileurl="file://$PROJECT_DIR$/external/volley/volley.iml" filepath="$PROJECT_DIR$/external/volley/volley.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external/wire-runtime/wire-runtime.iml" filepath="$PROJECT_DIR$/external/wire-runtime/wire-runtime.iml" />
     </modules>
   </component>
 </project>

@@ -23,6 +23,22 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.1.0'
     compile 'com.etsy.android.grid:library:1.0.5'
-    compile 'com.android.support:support-v4:22.1.0'
+    compile project(':framework:base')
+    compile project(':framework:mvc')
+    compile project(':framework:rpc')
+    compile project(':framework:log')
+    compile project(':framework:udid')
+    compile project(':framework:image')
+    compile project(':framework:media')
+    compile project(':framework:shared_storage')
+    compile project(':external:actionbarsherlock')
+    compile project(':external:pulltorefresh')
+    compile project(':external:fastmd5')
     compile project(':external:volley')
+    compile 'com.android.support:support-v4:22.1.0'
+    compile project(':external:wire-runtime')
+    compile files('libs/protostuff-api-1.0.7.jar')
+    compile files('libs/protostuff-core-1.0.7.jar')
+    compile files('libs/NineOldAndroid-2.4.0.jar')
+    compile 'com.google.code.gson:gson:2.3.1'
 }

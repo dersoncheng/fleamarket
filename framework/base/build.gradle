@@ -37,5 +37,5 @@ dependencies {
     compile 'pinyin4android:pinyin4android:1.0'
     compile project(':external:wire-runtime')
     compile project(':framework:base-config')
-    compile 'com.wandoujia:gson:2.2.4'
+    compile 'com.google.code.gson:gson:2.3.1'
 }

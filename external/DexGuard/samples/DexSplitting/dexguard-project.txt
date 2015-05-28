@@ -1,0 +1,15 @@
+# DexGuard's default settings are fine for this sample application.
+
+# Display some more statistics about the processed code.
+-verbose
+
+# For the sake of the sample, we won't optimize the code.
+-dontoptimize
+
+# Specify classes that will be packaged in a separate dex file.
+-splitdexfile com.example.Message*
+
+# In real applications, you'll probably put large libraries in separate
+# dex files.
+#-splitdexfile com.google.**
+#-splitdexfile com.facebook.**

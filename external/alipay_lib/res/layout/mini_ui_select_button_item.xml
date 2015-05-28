@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/mini_select_button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/msp_dimen_40"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/mini_text_black" />
+
+    <ImageView
+        android:id="@+id/mini_select_button_img"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/msp_dimen_40"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/mini_arrow"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>

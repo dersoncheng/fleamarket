@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mini_root"
+    android:layout_width="@dimen/mini_win_default_width"
+    android:layout_height="@dimen/mini_win_default_height"
+    android:layout_centerVertical="true"
+    android:gravity="top|center_horizontal"
+    android:orientation="vertical"
+    android:padding="0dp" >
+
+    <RelativeLayout
+        android:id="@+id/mini_main_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/mini_title_height"
+        android:layout_gravity="top"
+        android:gravity="center_vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/mini_main_btBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/mini_margin_6"
+            android:paddingLeft="@dimen/mini_margin_left"
+            android:paddingRight="@dimen/mini_margin_6"
+            android:paddingTop="@dimen/mini_margin_6"
+            android:src="@drawable/mini_back_selector"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:id="@+id/mini_linTitleContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/mini_form_btSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/mini_margin_6"
+            android:paddingLeft="@dimen/mini_margin_6"
+            android:paddingRight="@dimen/mini_margin_right"
+            android:paddingTop="@dimen/mini_margin_6"
+            android:text="@string/mini_switch"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mini_linBlocksConpent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|center_horizontal"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mini_main_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/mini_main_bt_devider"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mini_margin_bottom"
+            android:background="@drawable/mini_footer_line"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:id="@+id/mini_main_btn_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/mini_margin_bottom"
+            android:layout_marginLeft="@dimen/mini_margin_left"
+            android:layout_marginRight="@dimen/mini_margin_right" >
+
+            <Button
+                android:id="@+id/mini_main_btCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/mini_margin_default"
+                android:layout_weight="1"
+                android:background="@drawable/mini_btn_cancel_bg"
+                android:gravity="center"
+                android:textColor="@color/mini_text_black"
+                android:textSize="@dimen/mini_text_size_xx_large"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/mini_main_btConfirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/mini_btn_confirm_bg_selector"
+                android:gravity="center"
+                android:textColor="@drawable/mini_btn_confirm_text_color_selector"
+                android:textSize="@dimen/mini_text_size_xx_large"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

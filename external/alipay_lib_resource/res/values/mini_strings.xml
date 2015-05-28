@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="mini_loading_1">正在安全检测&#8230;</string>
+    <string name="mini_loading">正在加载&#8230;</string>
+    <string name="mini_net_error">不能连接到网络，是否重试？</string>
+    <string name="mini_redo">重试</string>
+    <string name="mini_error_title_default">提示</string>
+    <string name="mini_app_error">系统繁忙，请稍后再试。</string>
+    <string name="mini_debug_app_error">程序发生错误！点击确定退出程序。</string>
+    <string name="mini_countdown_info">获取校验码</string>
+    <string name="mini_format_error">格式错误</string>
+    <string name="mini_page_add_title">添加银行卡</string>
+    <string name="mini_page_add_hint">银行卡卡号</string>
+    <string name="mini_card_no">卡号</string>
+    <string name="mini_page_add_tips"> 提供支付密码和短信验证的双重保障</string>
+    <string name="mini_page_msg_title">填写银行卡信息</string>
+    <string name="mini_page_next">下一步</string>
+    <string name="mini_page_name">姓名          </string>
+    <string name="mini_page_input_name_hint">持卡人姓名</string>
+    <string name="mini_id_no">证件号</string>
+    <string name="mini_page_input_id_hint">证件号码</string>
+    <string name="mini_page_msg_check">信息加密处理，仅用于银行验证</string>
+    <string name="mini_page_msg_choose_type">选择证件类型</string>
+    <string name="mini_date">有效期</string>
+    <string name="mini_date_hint">月份/年份</string>
+    <string name="mini_safe_no">安全码</string>
+    <string name="mini_safe_no_hint">卡背面末三位数字</string>
+    <string name="mini_phone_no">手机号</string>
+    <string name="mini_phone_no_hint">银行预留手机号码</string>
+    <string name="mini_agree">同意</string>
+    <string name="mini_quickpay_protocol">《服务协议》</string>
+    <string name="mini_password">密码</string>
+    <string name="mini_switch">切换</string>
+    <string name="mini_password_hint">请输入密码</string>
+    <string name="mini_canel_install_msp">你已取消安装移动快捷支付。</string>
+    <string name="mini_canel_install_wallet">你已取消安装支付宝钱包。</string>
+
+</resources>

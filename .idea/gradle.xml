@@ -11,7 +11,21 @@
             <option value="$PROJECT_DIR$/AndroidStaggeredGrid" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/external" />
+            <option value="$PROJECT_DIR$/external/actionbarsherlock" />
+            <option value="$PROJECT_DIR$/external/fastmd5" />
+            <option value="$PROJECT_DIR$/external/pulltorefresh" />
             <option value="$PROJECT_DIR$/external/volley" />
+            <option value="$PROJECT_DIR$/external/wire-runtime" />
+            <option value="$PROJECT_DIR$/framework" />
+            <option value="$PROJECT_DIR$/framework/base" />
+            <option value="$PROJECT_DIR$/framework/base-config" />
+            <option value="$PROJECT_DIR$/framework/image" />
+            <option value="$PROJECT_DIR$/framework/log" />
+            <option value="$PROJECT_DIR$/framework/media" />
+            <option value="$PROJECT_DIR$/framework/mvc" />
+            <option value="$PROJECT_DIR$/framework/rpc" />
+            <option value="$PROJECT_DIR$/framework/shared_storage" />
+            <option value="$PROJECT_DIR$/framework/udid" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    color: #A4C639;
+}
+
+p {
+    text-align: center;
+    color: black;
+}
+
+img {
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}

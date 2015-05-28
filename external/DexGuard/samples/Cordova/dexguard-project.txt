@@ -1,0 +1,13 @@
+# DexGuard's default settings are fine for this sample application.
+
+# We'll display some more statistics about the processed code.
+-verbose
+
+# Encrypt all asset files that are referenced from the code.
+# In this sample, they are referenced in com.example.MyAssetInputStreamFactory.
+# You should have a similar class in your application.
+-encryptassetfiles assets/**
+
+# For good measure, encrypt the classes related to the encrypted assets.
+-encryptclasses com.example.MyAssetInputStreamFactory
+-encryptclasses dexguard.util.**

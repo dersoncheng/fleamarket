@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true"><nine-patch android:src="@drawable/mini_table_single_center_pressed" />
+    </item>
+    <item android:state_enabled="false"><nine-patch android:src="@drawable/mini_table_single_center_normal" />
+    </item>
+    <item><nine-patch android:src="@drawable/mini_table_single_center_normal" />
+    </item>
+
+</selector>

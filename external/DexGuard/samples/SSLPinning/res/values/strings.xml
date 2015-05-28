@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SSLPinning</string>
+    <string name="header">
+        Choose one of the following ways to download an image from
+        \'https://upload.wikimedia.org/\'
+    </string>
+    <string name="result_header"></string>
+    <string name="result"></string>
+    <string name="button1">HttpClient with Pinned Certificates</string>
+    <string name="button2">HttpsURLConnection with Pinned Certificates</string>
+    <string name="button3">HttpsURLConnection with Pinned Public keys</string>
+</resources>
