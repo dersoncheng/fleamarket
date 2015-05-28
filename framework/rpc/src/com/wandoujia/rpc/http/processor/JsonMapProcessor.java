@@ -2,9 +2,9 @@ package com.wandoujia.rpc.http.processor;
 
 import java.util.Map;
 
-import com.wandoujia.gson.Gson;
-import com.wandoujia.gson.JsonSyntaxException;
-import com.wandoujia.gson.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
 import com.wandoujia.rpc.http.exception.ContentParseException;
 
 public class JsonMapProcessor<T, U> implements Processor<String, Map<T, U>, ContentParseException> {

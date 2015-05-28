@@ -1,10 +1,10 @@
 package com.wandoujia.rpc.http.processor;
 
-import java.lang.reflect.ParameterizedType;
-
-import com.wandoujia.gson.Gson;
-import com.wandoujia.gson.JsonSyntaxException;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.wandoujia.rpc.http.exception.ContentParseException;
+
+import java.lang.reflect.ParameterizedType;
 
 /**
  * Json parser to parse string to java object.

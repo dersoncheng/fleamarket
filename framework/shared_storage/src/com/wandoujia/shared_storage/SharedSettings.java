@@ -1,6 +1,6 @@
 package com.wandoujia.shared_storage;
 
-import com.wandoujia.gson.reflect.TypeToken;
+import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.Collection;

@@ -1,5 +1,10 @@
 package com.wandoujia.shared_storage;
 
+import android.text.TextUtils;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,11 +12,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-
-import android.text.TextUtils;
-
-import com.wandoujia.gson.Gson;
-import com.wandoujia.gson.JsonSyntaxException;
 
 /**
  * Created by liuyaxin on 13-8-19.

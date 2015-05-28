@@ -1,15 +1,15 @@
 package com.wandoujia.base.utils;
 
-import java.lang.reflect.Type;
-import java.util.Map;
-import java.util.Set;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcel;
 
-import com.wandoujia.gson.Gson;
+import com.google.gson.Gson;
+
+import java.lang.reflect.Type;
+import java.util.Map;
+import java.util.Set;
 
 // TODO(zhulantian) add function to putObject() and getObject(), use gson to parse object to string.
 public class Preferences implements SharedPreferences {

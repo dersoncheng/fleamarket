@@ -2,15 +2,11 @@ package com.wandoujia.shared_storage;
 
 import android.text.TextUtils;
 
-import com.wandoujia.gson.reflect.TypeToken;
+import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**

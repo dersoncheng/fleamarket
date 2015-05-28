@@ -1,14 +1,14 @@
 package com.wandoujia.shared_storage;
 
+import android.text.TextUtils;
+
+import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-
-import android.text.TextUtils;
-
-import com.wandoujia.gson.reflect.TypeToken;
 
 /**
  * Created by liuyx on 13-9-18.

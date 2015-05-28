@@ -1,17 +1,17 @@
 package com.wandoujia.rpc.http.exception;
 
+import android.text.TextUtils;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
+
+import org.apache.http.HttpStatus;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
-
-import org.apache.http.HttpStatus;
-
-import android.text.TextUtils;
-
-import com.wandoujia.gson.Gson;
-import com.wandoujia.gson.JsonSyntaxException;
-import com.wandoujia.gson.reflect.TypeToken;
 
 /**
  * @author zhulantian@wandoujia.com (Lantian Zhu)

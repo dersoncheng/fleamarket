@@ -1,8 +1,70 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="Flea.Theme.Default" parent="Theme.Sherlock.Light">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowContentOverlay">@null</item>
+        <!--<item name="contentBackground">@color/bg_list_content</item>-->
+        <item name="android:windowBackground">@color/bg_list_content</item>
+
+        <item name="homeAsUpIndicator">@drawable/ic_explore_back_drawable</item>
+        <item name="actionBarStyle">@style/Flea.ActionBar.Default</item>
+        <item name="actionButtonStyle">@style/Flea.ActionBar.ActionButton</item>
+        <item name="actionBarItemBackground">@drawable/bg_explore_actionbar_item</item>
+        <item name="actionOverflowButtonStyle">@style/Flea.ActionBar.ActionButton.Overflow</item>
+        <item name="listPopupWindowStyle">@style/Flea.Widget.Popup</item>
+        <item name="popupMenuStyle">@style/Flea.Widget.Popup</item>
+        <item name="dropDownListViewStyle">@style/Flea.Widget.ListView.DropDown</item>
+        <item name="android:dropDownListViewStyle">@style/Flea.Widget.ListView.DropDown</item>
+
+        <!--<item name="verticalId">@id/vertical_home</item>-->
+        <!--<item name="verticalColor">@color/light_red</item>-->
+        <!--<item name="verticalNormalColor">@color/light_red</item>-->
+        <!--<item name="verticalButtonBackground">@drawable/bg_card_button_drawable_selector_home</item>-->
+        <!--<item name="verticalProgressDrawable">@drawable/bg_progress_bar_home</item>-->
+        <!--<item name="verticalTabTextColor">@color/color_tab_home</item>-->
+        <!--<item name="verticalFilterDrawable">@drawable/bg_filter_item_home</item>-->
+    </style>
+
+    <style name="Flea.ActionBar.Default"
+           parent="Widget.Sherlock.Light.ActionBar.Solid">
+        <item name="navigationMode">normal</item>
+        <item name="background">@color/bg_explore_banner</item>
+        <item name="titleTextStyle">@style/TextAppearance.Flea.ActionBar.Title</item>
+        <item name="displayOptions">showTitle|homeAsUp</item>
+    </style>
+
+    <style name="Flea.ActionBar.ActionButton"
+           parent="Widget.Sherlock.Light.ActionButton">
+        <item name="android:minWidth">@dimen/actionbar_height</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="Flea.ActionBar.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_mything_overflow_normal</item>
+        <item name="android:minWidth">@dimen/actionbar_height</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="Flea.Widget.Popup"
+           parent="Widget.Sherlock.Light.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/bg_explore_menu</item>
+        <item name="android:dropDownWidth">@dimen/dropdown_item_width</item>
+    </style>
+
+    <style name="Flea.Widget.ListView.DropDown"
+           parent="Widget.Sherlock.Light.ListView.DropDown">
+        <item name="android:divider">@color/dropdown_menu_list_divider_color</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:listSelector">@drawable/dropdown_menu_list_item_bg</item>
+    </style>
+
+    <style name="TextAppearance.Flea.ActionBar.Title"
+           parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/text_size_xxlarge</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 </resources>

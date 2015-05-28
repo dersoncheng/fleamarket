@@ -1,6 +1,6 @@
 package com.wandoujia.rpc.http.cache;
 
-import com.wandoujia.gson.reflect.TypeToken;
+import com.google.gson.reflect.TypeToken;
 
 /**
  * Interface to mark an object is cacheable.

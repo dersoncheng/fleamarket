@@ -1,12 +1,6 @@
 package com.wandoujia.rpc.http.client;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-import org.apache.http.HttpResponse;
-
-import com.wandoujia.gson.JsonParseException;
+import com.google.gson.JsonParseException;
 import com.wandoujia.rpc.http.cache.CacheItemWrapper;
 import com.wandoujia.rpc.http.cache.Cacheable;
 import com.wandoujia.rpc.http.cache.DataCache;
@@ -17,6 +11,12 @@ import com.wandoujia.rpc.http.delegate.GZipHttpDelegate;
 import com.wandoujia.rpc.http.exception.HttpException;
 import com.wandoujia.rpc.http.processor.GZipHttpResponseProcessor;
 import com.wandoujia.rpc.http.processor.Processor;
+
+import org.apache.http.HttpResponse;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Data client with cache.

@@ -1,11 +1,11 @@
 package com.wandoujia.rpc.http.processor;
 
-import java.util.List;
-
-import com.wandoujia.gson.Gson;
-import com.wandoujia.gson.JsonSyntaxException;
-import com.wandoujia.gson.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
 import com.wandoujia.rpc.http.exception.ContentParseException;
+
+import java.util.List;
 
 /**
  * Json parser to parse string to java object list.

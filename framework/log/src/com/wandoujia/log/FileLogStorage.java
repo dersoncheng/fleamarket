@@ -1,5 +1,13 @@
 package com.wandoujia.log;
 
+import android.app.ActivityManager;
+import android.content.Context;
+import android.os.Process;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.wandoujia.base.utils.IOUtils;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,14 +20,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
-
-import android.app.ActivityManager;
-import android.content.Context;
-import android.os.Process;
-
-import com.wandoujia.base.utils.IOUtils;
-import com.wandoujia.gson.Gson;
-import com.wandoujia.gson.reflect.TypeToken;
 
 /**
  * @author xubin@wandoujia.com
