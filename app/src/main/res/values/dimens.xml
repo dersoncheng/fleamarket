@@ -3,9 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
-         https://developer.android.com/design/patterns/navigation-drawer.html -->
-    <dimen name="navigation_drawer_width">240dp</dimen>
+    <dimen name="card_list_padding">5dip</dimen>
+    <dimen name="card_subtitle_size">12dp</dimen>
 
     <dimen name="text_size_xsmall">10dp</dimen>
     <dimen name="text_size_micro">12dp</dimen>
@@ -17,6 +16,34 @@
     <dimen name="text_size_huge">24dp</dimen>
     <dimen name="text_size_xxhuge">28dp</dimen>
 
+    <dimen name="xxsmall_margin">2dip</dimen>
+    <dimen name="xsmall_margin">4dip</dimen>
+    <dimen name="ssmall_margin">5dip</dimen>
+    <dimen name="small_margin">6dip</dimen>
+    <dimen name="middle_margin">8dip</dimen>
+    <dimen name="xmiddle_margin">10dip</dimen>
+    <dimen name="normal_margin">12dip</dimen>
+    <dimen name="xnormal_margin">14dip</dimen>
+    <dimen name="snormal_margin">15dip</dimen>
+    <dimen name="xxnormal_margin">16dip</dimen>
+    <dimen name="large_margin">18dip</dimen>
+    <dimen name="slarge_margin">22dip</dimen>
+    <dimen name="xlarge_margin">28dip</dimen>
+    <dimen name="xxlarge_margin">40dip</dimen>
+    <dimen name="xxxlarge_margin">50dip</dimen>
+
     <dimen name="actionbar_height">48dip</dimen>
     <dimen name="dropdown_item_width">180dp</dimen>
+    <dimen name="tips_top_margin">100dip</dimen>
+
+    <dimen name="no_network_text_margin">80dp</dimen>
+    <dimen name="title_subtitle_margin">15dp</dimen>
+    <dimen name="middle_text_size">16dp</dimen>
+    <dimen name="floating_tip_margin">10dp</dimen>
+    <dimen name="floating_tips_height">36dp</dimen>
+    <dimen name="floating_tips_image_margin">5dp</dimen>
+
+    <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+         https://developer.android.com/design/patterns/navigation-drawer.html -->
+    <dimen name="navigation_drawer_width">240dp</dimen>
 </resources>

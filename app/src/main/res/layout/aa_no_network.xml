@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="@color/white">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/tip_no_network_title"
+            android:textSize="@dimen/text_size_xxlarge"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/no_network_text_margin"
+            android:layout_marginRight="@dimen/no_network_text_margin"
+            android:layout_marginTop="@dimen/title_subtitle_margin"
+            android:text="@string/no_network"
+            android:textColor="@color/card_sub_title_color"
+            android:textSize="@dimen/text_size_small" >
+    </TextView>
+
+    <Button
+            android:id="@+id/set_network"
+            style="@style/tips_button"
+            android:text="@string/open_connection_setting" >
+    </Button>
+</LinearLayout>

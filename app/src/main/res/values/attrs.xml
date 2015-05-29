@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScrollDownLayout">
+        <attr name="max_offset" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="NirvanaTheme" parent="SherlockTheme">
+        <attr name="actionbarStubBackground" format="reference|color"/>
+        <attr name="contentBackground" format="reference|color" />
+        <attr name="verticalId" format="reference" />
+        <attr name="verticalColor" format="color" />
+        <attr name="verticalTabTextColor" format="color" />
+        <attr name="verticalNormalColor" format="reference" />
+        <attr name="verticalButtonBackground" format="reference" />
+        <attr name="verticalProgressDrawable" format="reference" />
+        <attr name="verticalFilterDrawable" format="reference" />
+    </declare-styleable>
+</resources>

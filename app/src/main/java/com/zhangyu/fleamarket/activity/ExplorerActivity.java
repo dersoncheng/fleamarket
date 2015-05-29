@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+import com.zhangyu.fleamarket.R;
 import com.zhangyu.fleamarket.fragment.PictureListFragment;
 
 public class ExplorerActivity extends BaseActivity {
@@ -36,5 +39,23 @@ public class ExplorerActivity extends BaseActivity {
       ft.replace(android.R.id.content, pictureListFragment);
     }
     ft.commitAllowingStateLoss();
+  }
+
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    menu.add(Menu.NONE, R.id.menu_share, Menu.FIRST, R.string.share)
+      .setIcon(R.drawable.menu_icon_share)
+      .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+    return super.onCreateOptionsMenu(menu);
+  }
+
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+    if (id == R.id.menu_share) {
+    }
+    return super.onOptionsItemSelected(item);
   }
 }

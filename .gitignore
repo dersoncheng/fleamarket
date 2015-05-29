@@ -6,4 +6,5 @@
 *.iml
 /build
 /external
+/framework
 

@@ -46,4 +46,12 @@
     <color name="text_color_body">#777777</color>
     <color name="text_color_black">#333333</color>
     <color name="text_color_white">#ffffff</color>
+
+    <color name="white">#f7f7f7</color>
+    <color name="pure_white">#ffffff</color>
+    <color name="card_sub_title_color">#aaaaaa</color>
+    <color name="disabled">#FFB3B3B3</color>
+
+    <color name="holo_red_light">#ffff4444</color>
+    <color name="holo_red_dark">#ffcc0000</color>
 </resources>

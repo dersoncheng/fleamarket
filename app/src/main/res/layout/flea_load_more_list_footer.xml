@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhangyu.fleamarket.view.FetchMoreFooterView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <include
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_gravity="center"
+            layout="@layout/flea_cycle_loading"/>
+
+    <ImageView
+            android:id="@+id/no_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?attr/verticalNormalColor"
+            android:visibility="gone"/>
+
+</com.zhangyu.fleamarket.view.FetchMoreFooterView>

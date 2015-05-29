@@ -12,6 +12,17 @@
 
     <string name="action_settings">Settings</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share">Share</string>
+    <string name="retry">RETRY</string>
+    <string name="flea_last_modify_time">%1$d/%2$d Updated</string>
+    <string name="tips_refresh_failed">Update failed, try again later.</string>
+    <string name="flea_refresh_failed">Update failed</string>
+    <string name="flea_refresh_is_slow">Internet connection seems slow...</string>
+    <string name="flea_refreshing">Updating...</string>
+    <string name="flea_already_refreshed">Already Updated</string>
+    <string name="tip_no_network_title">No network</string>
+    <string name="tips_no_notwork">No network, check your network settings.</string>
+    <string name="no_network">No network connection, connect and try again.</string>
+    <string name="open_connection_setting">Network settings</string>
+    <string name="flea_search_no_result_tips">Erm... Nothing found here</string>
 </resources>

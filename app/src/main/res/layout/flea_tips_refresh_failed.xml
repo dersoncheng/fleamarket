@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/floating_tips_container"
+              android:layout_gravity="bottom"
+              android:background="@color/holo_red_light">
+
+    <TextView
+            android:id="@+id/content_message"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tips_refresh_failed"
+            style="@style/floating_tips_text"
+            android:layout_marginLeft="@dimen/floating_tip_margin"/>
+
+    <TextView
+            android:id="@+id/operation_area"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/retry"
+            android:drawableLeft="@drawable/ic_tip_fetchfailed"
+            style="@style/floating_tips_text"
+            android:layout_marginRight="@dimen/floating_tips_image_margin"/>
+
+</RelativeLayout>

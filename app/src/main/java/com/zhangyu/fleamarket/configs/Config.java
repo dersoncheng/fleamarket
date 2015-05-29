@@ -6,8 +6,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.Build;
+import android.os.Environment;
 import android.text.TextUtils;
 
+import com.wandoujia.base.utils.FileUtil;
 import com.wandoujia.base.utils.IOUtils;
 import com.wandoujia.base.utils.SharePrefSubmitor;
 import com.wandoujia.shared_storage.SharedSettings;
@@ -15,6 +17,7 @@ import com.zhangyu.fleamarket.app.FleaMarketApplication;
 import com.zhangyu.fleamarket.utils.ShortcutUtil;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.util.Map;
 
@@ -37,6 +40,14 @@ public class Config {
   private static final String KEY_USER_EXTERNAL_STORAGE_FOR_CACHE =
     "USER_EXTERNAL_STORAGE_FOR_CACHE";
   public static Class<? extends Activity> CONFIG_MAIN_ACTIVITY_CLASS = null;
+
+  public enum ContentDir {
+    WEB, MUSIC, VIDEO, IMAGE, BOOK, BACKUP, DIAGNOSIS, EXPORT, CONFIG, MD5, DATA,
+    CLIENT, CAPTURE, PHOTOSYNC, MISC, MARIO
+  }
+  private static final String[] CONTENT_DIRS = new String[]{"web",
+    "video", "diagnosis", "export",
+    ".config", ".md5", "data", ".client", "capture", "misc"};
 
   public static boolean isShortcutCreated() {
     return getGenericSharedPrefs().getBoolean(NEW_KEY_SHORTCUT_CREATED, false);
@@ -132,6 +143,73 @@ public class Config {
 
   public static boolean doesExternalStorageForCacheExist() {
     return getGenericSharedPrefs().contains(KEY_USER_EXTERNAL_STORAGE_FOR_CACHE);
+  }
+
+  public static String getRootDirectory() {
+    try {
+      if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+        return null;
+      }
+    } catch (Exception e) {
+      // Catch exception is trying to fix a crash inside of Environment.getExternalStorageState().
+      e.printStackTrace();
+      return null;
+    }
+    String rootDir = Environment.getExternalStorageDirectory()
+      .getAbsolutePath()
+      + "/" + OverridableConfig.ROOT_DIR + "/";
+    File file = new File(rootDir);
+    if (!file.exists()) {
+      if (!file.mkdirs()) {
+        return null;
+      }
+    }
+    return rootDir;
+  }
+
+  public static String getExternalContentDirectory(ContentDir contentDir) {
+    String rootDir = getRootDirectory();
+    if (!TextUtils.isEmpty(rootDir)) {
+      String content = rootDir + CONTENT_DIRS[contentDir.ordinal()] + "/";
+
+      File contentFile = new File(content);
+      if (!contentFile.exists()) {
+        if (!contentFile.mkdirs()) {
+          return null;
+        }
+      }
+
+      return content;
+    } else {
+      return null;
+    }
+  }
+
+  public static String getInternalContentDirectory(ContentDir contentDir) {
+    String internalRootDir = FleaMarketApplication.getAppContext().getFilesDir().getAbsolutePath();
+    if (!TextUtils.isEmpty(internalRootDir)) {
+      String content = internalRootDir + "/"
+        + CONTENT_DIRS[contentDir.ordinal()] + "/";
+
+      File contentFile = new File(content);
+      if (!contentFile.exists()) {
+        if (!contentFile.mkdirs()) {
+          return null;
+        }
+      }
+      return content;
+    } else {
+      return null;
+    }
+  }
+
+  public static String getContentDirectory(ContentDir contentDir) {
+    String external = getExternalContentDirectory(contentDir);
+    if (TextUtils.isEmpty(external) || !FileUtil.exists(external)) {
+      return getInternalContentDirectory(contentDir);
+    } else {
+      return external;
+    }
   }
 
   private static String loadChannelFromAssets(Context context) {

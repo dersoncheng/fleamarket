@@ -67,4 +67,32 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="card_list_view">
+        <item name="android:divider">@null</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:fadingEdge">none</item>
+    </style>
+
+    <style name="tips_button">
+        <item name="android:listSelector">?attr/verticalButtonBackground</item>
+        <item name="android:layout_width">120dip</item>
+        <item name="android:layout_height">36dip</item>
+        <item name="android:textColor">@color/pure_white</item>
+        <item name="android:textSize">@dimen/middle_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">?attr/verticalButtonBackground</item>
+        <item name="android:layout_marginTop">40dp</item>
+    </style>
+
+    <style name="floating_tips_text">
+        <item name="android:textSize">@dimen/card_subtitle_size</item>
+        <item name="android:textColor">@color/floating_tips_text_color</item>
+        <item name="android:duplicateParentState">true</item>
+    </style>
+
+    <style name="floating_tips_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/floating_tips_height</item>
+    </style>
+
 </resources>
