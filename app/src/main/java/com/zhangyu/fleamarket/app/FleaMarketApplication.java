@@ -5,10 +5,13 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ByteArrayPool;
+import com.android.volley.toolbox.Volley;
 import com.wandoujia.base.config.GlobalConfig;
 import com.wandoujia.base.storage.StorageManager;
 import com.wandoujia.base.utils.SystemUtil;
@@ -30,6 +33,7 @@ public class FleaMarketApplication extends Application {
   private static ImageManager imageManager;
   private static FleaMarketDataClient dataClient;
   private static ByteArrayPool byteArrayPool;
+  private RequestQueue volleyRequestQueue;
   private static final String DATA_CACHE_FOLDER = "DataCache";
   private static final String IMAGE_CACHE_FOLDER = "ImageCache";
   private static Handler handler = new Handler(Looper.getMainLooper());
@@ -57,6 +61,10 @@ public class FleaMarketApplication extends Application {
   }
 
   private void initMainProcess() {
+    // This is to avoid the AsyncTask.class being loaded at background thread and causing some
+    // error.
+    AsyncTask.class.hashCode();
+
     GlobalConfig.setAppContext(context);
     GlobalConfig.setAppRootDir(Config.getRootDirectory());
     initByteArrayPool();
@@ -172,5 +180,16 @@ public class FleaMarketApplication extends Application {
       imageManager = new ImageManager(context, config, byteArrayPool);
     }
     return imageManager;
+  }
+
+  public RequestQueue getVolleyQueue() {
+    if (volleyRequestQueue == null) {
+      synchronized (this) {
+        if (volleyRequestQueue == null) {
+          volleyRequestQueue = Volley.newRequestQueue(this);
+        }
+      }
+    }
+    return volleyRequestQueue;
   }
 }

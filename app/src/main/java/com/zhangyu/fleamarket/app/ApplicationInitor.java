@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.wandoujia.base.utils.LauncherUtil;
 import com.zhangyu.fleamarket.configs.Config;
+import com.zhangyu.fleamarket.onlineconfig.FleaMarketOnlineConfigController;
 import com.zhangyu.fleamarket.utils.ShortcutUtil;
 
 public class ApplicationInitor {
@@ -22,19 +23,19 @@ public class ApplicationInitor {
     }
     isInited = true;
 
-//    new Thread(new Runnable() {
-//      @Override
-//      public void run() {
-//        FleaMarketOnlineConfigController.getInstance().updateOnlineConfig();
-//        Config.preLoadPreferences();
-//        createShortcutIfNecessary();
-//        //NotifyCardManager.getInstance();
-//        //StatisticsTools.initParam();
-//        if (Config.getFirstLaunchAppTime() == 0) {
-//          Config.setFirstLaunchAppTime(System.currentTimeMillis());
-//        }
-//      }
-//    }).start();
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        FleaMarketOnlineConfigController.getInstance().updateOnlineConfig();
+        Config.preLoadPreferences();
+        createShortcutIfNecessary();
+        //NotifyCardManager.getInstance();
+        //StatisticsTools.initParam();
+        if (Config.getFirstLaunchAppTime() == 0) {
+          Config.setFirstLaunchAppTime(System.currentTimeMillis());
+        }
+      }
+    }).start();
   }
 
   private static void createShortcutIfNecessary() {

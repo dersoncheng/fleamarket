@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import com.wandoujia.base.utils.NetworkUtil;
 import com.wandoujia.mvc.BaseController;
 import com.wandoujia.mvc.BaseView;
-import com.zhangyu.fleamarket.R;
 import com.zhangyu.fleamarket.adapter.BaseCardAdapter;
 import com.zhangyu.fleamarket.adapter.DataAdapter;
 import com.zhangyu.fleamarket.controller.DemoCardController;
@@ -43,11 +42,6 @@ public class DemoListFragment
     if (getArguments() != null && getArguments().containsKey(KEY_SPECIAL_ID)) {
       this.specialId = getArguments().getLong(KEY_SPECIAL_ID);
     }
-  }
-
-  @Override
-  protected int getLayoutResId() {
-    return R.layout.
   }
 
   @Override
