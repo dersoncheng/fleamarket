@@ -14,4 +14,40 @@
         <attr name="verticalProgressDrawable" format="reference" />
         <attr name="verticalFilterDrawable" format="reference" />
     </declare-styleable>
+    <declare-styleable name="DownloadableProgressView">
+        <attr name="progress_anchorView" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="Button">
+        <attr name="isDetail" format="boolean" />
+        <attr name="state_pending" format="boolean" />
+        <attr name="state_paid" format="boolean" />
+        <attr name="state_install" format="boolean" />
+        <attr name="state_upgrade" format="boolean" />
+        <attr name="state_cancel" format="boolean" />
+        <attr name="state_retry" format="boolean" />
+        <attr name="state_open" format="boolean" />
+        <attr name="state_unzip" format="boolean" />
+        <attr name="state_detail" format="boolean" />
+        <attr name="state_unsubscribed" format="boolean" />
+        <attr name="state_subscribed" format="boolean" />
+        <attr name="state_download_installing" format="boolean" />
+        <attr name="state_upgrade_installing" format="boolean" />
+        <attr name="state_upgrade_install" format="boolean" />
+        <attr name="state_download_install" format="boolean" />
+        <attr name="state_download" format="boolean" />
+        <attr name="state_downloading" format="boolean" />
+        <attr name="state_download_list" format="boolean" />
+        <attr name="state_unavailable" format="boolean" />
+        <attr name="state_pause" format="boolean"/>
+        <attr name="state_continue" format="boolean" />
+        <attr name="state_extract_continue" format="boolean" />
+        <attr name="state_pending_pause" format="boolean"/>
+        <attr name="state_highLight" format="boolean" />
+        <attr name="state_unHighLight" format="boolean" />
+        <attr name="state_warning" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="SubActionButton">
+        <attr name="always_show_as_action" format="boolean" />
+        <attr name="action_icon" format="reference" />
+    </declare-styleable>
 </resources>

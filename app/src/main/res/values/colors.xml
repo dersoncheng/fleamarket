@@ -46,12 +46,24 @@
     <color name="text_color_body">#777777</color>
     <color name="text_color_black">#333333</color>
     <color name="text_color_white">#ffffff</color>
+    <color name="sixty_transparent">#66e5eadd</color>
 
     <color name="white">#f7f7f7</color>
     <color name="pure_white">#ffffff</color>
+    <color name="card_title_color">#333333</color>
     <color name="card_sub_title_color">#aaaaaa</color>
+    <color name="card_tag_color">#aaaaaa</color>
+    <color name="card_tag_bg_color">#eeeeee</color>
+    <color name="card_button_text_unHighLight_color">#333333</color>
+    <color name="card_description_color">#777777</color>
+    <color name="card_grey">#aaaaaa</color>
+    <color name="card_pressed">#e8e8e8</color>
     <color name="disabled">#FFB3B3B3</color>
 
     <color name="holo_red_light">#ffff4444</color>
     <color name="holo_red_dark">#ffcc0000</color>
+
+    <color name="transparent_black">#7F000000</color>
+    <color name="transparent_green">#E6DBE1C0</color>
+    <color name="transparent_grey">#E6DDDDDD</color>
 </resources>

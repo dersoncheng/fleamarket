@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:progress_anchorView="@id/sub_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/download_status"
+        style="@style/card_sub_title"
+        android:layout_alignLeft="@id/sub_title"
+        android:layout_alignBottom="@id/sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/download_speed"
+        style="@style/card_download_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/download_status"
+        android:layout_below="@id/title"/>
+
+    <!--<TextView-->
+    <!--android:id="@+id/download_size"-->
+    <!--style="@style/card_sub_title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignBottom="@id/download_speed"-->
+    <!--android:layout_toRightOf="@id/download_speed"-->
+    <!--android:layout_marginLeft="@dimen/small_margin"/>-->
+
+    <ProgressBar
+        android:id="@+id/download_progress"
+        style="@style/card_download_progress"
+        android:layout_width="match_parent"
+        android:layout_alignLeft="@id/download_speed"
+        android:layout_toLeftOf="@id/action_imageview"
+        android:layout_marginTop="@dimen/card_progress_margin_top"
+        android:layout_below="@id/download_speed"/>
+
+</merge>

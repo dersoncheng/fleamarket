@@ -95,4 +95,101 @@
         <item name="android:layout_height">@dimen/floating_tips_height</item>
     </style>
 
+    <style name="card_sub_title">
+        <item name="android:textColor">@color/card_sub_title_color</item>
+        <item name="android:textSize">@dimen/card_subtitle_size</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="card_download_speed">
+        <item name="android:textColor">?attr/verticalNormalColor</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/card_tag_text_size</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="card_title_mini">
+        <item name="android:textColor">@color/card_title_color</item>
+        <item name="android:textSize">@dimen/card_title_mini_size</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="card_item">
+        <item name="android:background">@drawable/bg_card_background_normal</item>
+    </style>
+
+    <style name="card_action_imageview">
+        <!--<item name="android:background">?attr/verticalButtonBackground</item>-->
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_width">@dimen/card_button_imageview_width</item>
+        <item name="android:layout_height">@dimen/card_button_imageview_height</item>
+        <item name="android:textSize">@dimen/card_button_text_size</item>
+        <item name="android:textColor">@color/card_button_color_selector</item>
+    </style>
+
+    <style name="card_title">
+        <item name="android:textColor">@color/card_title_color</item>
+        <item name="android:textSize">@dimen/card_title_size</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:lines">2</item>
+    </style>
+
+    <style name="card_download_progress">
+        <item name="android:progressDrawable">?attr/verticalProgressDrawable</item>
+        <item name="android:layout_height">3dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:max">100</item>
+    </style>
+
+    <style name="card_cover_short_video">
+        <item name="android:layout_width">@dimen/video_card_icon_width</item>
+        <item name="android:layout_height">@dimen/card_icon_short_video_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="card_title_short_video">
+        <item name="android:textColor">@color/card_title_color</item>
+        <item name="android:textSize">@dimen/text_size_middle</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:lines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="card_action_button">
+        <item name="android:background">?attr/verticalButtonBackground</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_width">@dimen/card_button_width</item>
+        <item name="android:layout_height">@dimen/card_button_height</item>
+    </style>
+
+    <style name="card_banner">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">140dip</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="card_sub_action">
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">@dimen/card_sub_action_width</item>
+        <item name="android:layout_height">@dimen/card_sub_action_height</item>
+    </style>
+
+    <style name="card_icon_mini">
+        <item name="android:layout_width">@dimen/card_icon_mini_width</item>
+        <item name="android:layout_height">@dimen/card_icon_mini_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="card_cover_mini">
+        <item name="android:layout_width">@dimen/card_cover_mini_width</item>
+        <item name="android:layout_height">@dimen/card_cover_mini_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
 </resources>

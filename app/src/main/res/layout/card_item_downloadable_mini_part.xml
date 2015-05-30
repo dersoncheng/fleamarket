@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.wandoujia.image.view.AsyncImageView
+        android:id="@+id/icon"
+        style="@style/card_icon_mini"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/card_padding"
+        android:layout_marginRight="@dimen/card_padding"
+        android:layout_marginTop="@dimen/card_padding_vertical"
+        android:layout_marginBottom="@dimen/card_padding_vertical"/>
+
+    <ImageView
+        android:id="@+id/badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"/>
+
+
+    <com.zhangyu.fleammarket.view.button.StatefulImageView
+        android:id="@+id/action_imageview"
+        style="@style/card_action_imageview"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/card_padding"/>
+
+    <com.zhangyu.fleamarket.view.button.SubActionButton
+        android:id="@+id/sub_action_button"
+        style="@style/card_sub_action"
+        android:layout_toLeftOf="@id/action_imageview"
+        android:layout_centerVertical="true"/>
+
+    <!-- This RelativeLayout here is for keeping the views in center-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/sub_action_button"
+        android:layout_toRightOf="@id/icon">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/card_title_mini"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/card_sub_title"
+            android:layout_below="@id/title"
+            android:layout_alignLeft="@id/title"
+            android:layout_marginTop="@dimen/card_sub_title_margin_top"/>
+
+        <include layout="@layout/card_item_download_progress_part"/>
+
+        <TextView
+            android:id="@+id/download_size"
+            style="@style/card_sub_title"
+            android:textSize="@dimen/card_tag_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/download_speed"
+            android:layout_toRightOf="@id/download_speed"
+            android:layout_marginLeft="@dimen/small_margin"/>
+
+    </RelativeLayout>
+
+</merge>

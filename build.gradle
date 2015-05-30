@@ -92,7 +92,7 @@ ext.buildToolsVersion = getBuildToolsVersion("19.1.0")
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.1.0'
@@ -104,6 +104,16 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        maven {
+            url "http://mvn.corp.wandoujia.com/nexus/content/groups/public"
+            credentials {
+                username "mvn"
+                password "wandoujiamaven"
+            }
+        }
+        maven {
+            url "https://repo.commonsware.com.s3.amazonaws.com"
+        }
+        mavenCentral()
     }
 }

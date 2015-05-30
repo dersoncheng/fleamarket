@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:color="@color/pure_white"
+          app:state_highLight="true"/>
+    <item android:color="@color/card_button_text_unHighLight_color"
+          app:state_unHighLight="true"/>
+    <item android:color="@color/pure_white"/>
+</selector>

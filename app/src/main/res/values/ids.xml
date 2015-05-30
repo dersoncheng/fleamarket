@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="menu_share" type="id"/>
+    <item name="card_controller" type="id"/>
+    <item name="key_popup_window" type="id"/>
     <item name="list_view_scroll_to_top" type="id"/>
 </resources>

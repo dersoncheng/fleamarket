@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhangyu.fleamarket.view.ContentCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:progress_anchorView="@id/sub_title"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/card_item_my_thing_download_height"
+    android:background="@drawable/bg_explore_card_normal">
+
+    <include layout="@layout/card_item_downloadable_mini_part"/>
+
+</com.zhangyu.fleamarket.view.ContentCardView>

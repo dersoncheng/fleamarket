@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhangyu.fleamarket.view.ContentCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:progress_anchorView="@id/sub_title"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/card_item_explore_short_video_height"
+    style="@style/card_item">
+
+    <com.zhangyu.fleamarket.view.button.StatefulImageView
+        android:id="@+id/action_imageview"
+        style="@style/card_action_imageview"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/card_button_explore_margin_top"
+        android:layout_marginLeft="@dimen/card_padding"
+        android:layout_marginRight="@dimen/card_padding"/>
+
+    <com.zhangyu.fleamarket.view.AsyncImageView
+        android:id="@+id/icon"
+        style="@style/card_cover_short_video"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/card_padding"
+        android:layout_marginRight="@dimen/card_padding"
+        android:layout_marginTop="@dimen/card_padding_vertical"
+        android:layout_marginBottom="@dimen/card_padding_vertical"/>
+
+    <TextView
+        android:id="@+id/icon_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/card_sub_title"
+        android:textColor="@color/white"
+        android:background="@color/transparent_black"
+        android:layout_alignBottom="@id/icon"
+        android:layout_alignRight="@id/icon"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/card_title_short_video"
+        android:layout_toRightOf="@id/icon"
+        android:layout_toLeftOf="@id/action_imageview"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/card_padding_vertical"
+        />
+
+    <TextView
+        android:id="@+id/sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/card_sub_title"
+        android:layout_toRightOf="@id/icon"
+        android:layout_alignLeft="@id/title"
+        android:layout_below="@id/title"
+        android:layout_marginTop="@dimen/card_sub_title_margin_top"/>
+
+    <include
+        layout="@layout/card_item_youtube_download_progress"/>
+
+</com.zhangyu.fleamarket.view.ContentCardView>

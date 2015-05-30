@@ -16,6 +16,30 @@
     <dimen name="text_size_huge">24dp</dimen>
     <dimen name="text_size_xxhuge">28dp</dimen>
 
+    <dimen name="card_progress_margin_top">1dip</dimen>
+    <dimen name="card_title_size">18dp</dimen>
+    <dimen name="card_sub_title_margin_top">2dip</dimen>
+    <dimen name="card_sub_title_margin_top_compact">1dip</dimen>
+    <dimen name="card_cover_height">96dip</dimen>
+    <dimen name="card_icon_mini_width">60dip</dimen>
+    <dimen name="card_icon_mini_height">60dip</dimen>
+    <dimen name="card_cover_mini_width">60dip</dimen>
+    <dimen name="card_cover_mini_height">90dip</dimen>
+    <dimen name="card_title_mini_size">18dp</dimen>
+    <dimen name="card_tag_text_size">11dp</dimen>
+    <dimen name="card_button_text_size">14dp</dimen>
+    <dimen name="card_subtitle_line_height">19dip</dimen>
+    <dimen name="card_cover_large_width">80dip</dimen>
+    <dimen name="card_cover_large_height">120dip</dimen>
+    <dimen name="card_icon_short_video_width">64dip</dimen>
+    <dimen name="card_icon_short_video_height">48dip</dimen>
+    <dimen name="card_item_my_thing_video_height">94dip</dimen>
+    <dimen name="card_padding">12dip</dimen>
+    <dimen name="card_padding_vertical">12dip</dimen>
+    <dimen name="card_button_imageview_height">48dip</dimen>
+    <dimen name="card_button_imageview_width">48dip</dimen>
+    <dimen name="card_item_explore_short_video_height">80dip</dimen>
+
     <dimen name="xxsmall_margin">2dip</dimen>
     <dimen name="xsmall_margin">4dip</dimen>
     <dimen name="ssmall_margin">5dip</dimen>
@@ -31,9 +55,12 @@
     <dimen name="xlarge_margin">28dip</dimen>
     <dimen name="xxlarge_margin">40dip</dimen>
     <dimen name="xxxlarge_margin">50dip</dimen>
+    <dimen name="super_large_padding">20dip</dimen>
 
     <dimen name="actionbar_height">48dip</dimen>
+    <dimen name="sub_action_text_size">18dip</dimen>
     <dimen name="dropdown_item_width">180dp</dimen>
+    <dimen name="dropdown_item_height">48dip</dimen>
     <dimen name="tips_top_margin">100dip</dimen>
 
     <dimen name="no_network_text_margin">80dp</dimen>
@@ -46,4 +73,19 @@
     <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
          https://developer.android.com/design/patterns/navigation-drawer.html -->
     <dimen name="navigation_drawer_width">240dp</dimen>
+
+    <dimen name="card_item_my_thing_download_height">94dip</dimen>
+    <dimen name="card_item_my_thing_download_inline_height">84dip</dimen>
+
+    <dimen name="video_card_icon_width">85dip</dimen>
+    <dimen name="video_card_icon_height">40dip</dimen>
+    <dimen name="card_button_explore_margin_top">12dip</dimen>
+    <dimen name="card_padding_top_video">4dip</dimen>
+    <dimen name="button_width">60dip</dimen>
+    <dimen name="button_width_big">80dip</dimen>
+    <dimen name="start_feed_card_button_text_size_mini">14dp</dimen>
+    <dimen name="card_button_width">60dip</dimen>
+    <dimen name="card_button_height">28dip</dimen>
+    <dimen name="card_sub_action_width">48dip</dimen>
+    <dimen name="card_sub_action_height">48dip</dimen>
 </resources>

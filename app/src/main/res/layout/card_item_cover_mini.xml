@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhangyu.fleamarket.view.ContentCardView
+    style="@style/card_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/card_item_my_thing_video_height"
+    >
+
+    <com.wandoujia.image.view.AsyncImageView
+        android:id="@+id/icon"
+        style="@style/card_cover_mini"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/card_padding"
+        android:layout_marginRight="@dimen/card_padding"
+        android:layout_marginTop="@dimen/card_padding_vertical"
+        android:layout_marginBottom="@dimen/card_padding_vertical"/>
+
+    <TextView
+        android:id="@+id/icon_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/card_sub_title"
+        android:textColor="@color/white"
+        android:background="@color/transparent_black"
+        android:layout_alignBottom="@id/icon"
+        android:layout_alignRight="@id/icon"/>
+
+    <LinearLayout
+        android:id="@+id/button_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.zhangyu.fleamarket.view.button.SubActionButton
+            android:id="@+id/sub_action_button"
+            style="@style/card_sub_action"
+            android:gravity="center_vertical"
+            app:always_show_as_action="true"/>
+
+        <com.zhangyu.fleamarket.view.button.StatefulImageView
+            android:id="@+id/action_imageview"
+            style="@style/card_action_imageview"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/card_padding"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/button_layout"
+        android:layout_toRightOf="@id/icon"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/card_title"
+            android:textSize="@dimen/card_title_mini_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/sub_title"
+            style="@style/card_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_sub_title_margin_top"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/sub_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+</com.zhangyu.fleamarket.view.ContentCardView>
