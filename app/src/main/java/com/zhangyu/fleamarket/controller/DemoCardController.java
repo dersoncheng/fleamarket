@@ -6,9 +6,6 @@ import com.zhangyu.fleamarket.card.controllers.HideCoverCardViewController;
 import com.zhangyu.fleamarket.model.DemoCardModel;
 import com.zhangyu.fleamarket.view.ContentCardView;
 
-/**
- * Created by niejunhong on 14-9-30.
- */
 public class DemoCardController implements
   BaseController<ContentCardView, DemoCardModel> {
 

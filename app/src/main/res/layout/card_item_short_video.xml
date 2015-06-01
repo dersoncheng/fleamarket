@@ -16,7 +16,7 @@
         android:layout_marginLeft="@dimen/card_padding"
         android:layout_marginRight="@dimen/card_padding"/>
 
-    <com.zhangyu.fleamarket.view.AsyncImageView
+    <com.wandoujia.image.view.AsyncImageView
         android:id="@+id/icon"
         style="@style/card_cover_short_video"
         android:layout_alignParentLeft="true"
@@ -57,7 +57,7 @@
         android:layout_below="@id/title"
         android:layout_marginTop="@dimen/card_sub_title_margin_top"/>
 
-    <include
-        layout="@layout/card_item_youtube_download_progress"/>
+    <!--<include-->
+        <!--layout="@layout/card_item_youtube_download_progress"/>-->
 
 </com.zhangyu.fleamarket.view.ContentCardView>

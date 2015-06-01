@@ -11,6 +11,7 @@ import com.zhangyu.fleamarket.model.FetcherModelConverter;
  */
 public class DemoCardProtoModelConverter implements
   FetcherModelConverter<Video, DemoCardModel> {
+
   @Override
   public DemoCardModel convert(Video video) {
     return DemoCardModelUtils.convertFromVideo(video, CardViewModel.ModelType.COMMON);

@@ -4,6 +4,7 @@ import com.wandoujia.em.common.proto.Channel;
 import com.wandoujia.em.common.proto.PlayList;
 import com.wandoujia.em.common.proto.Video;
 import com.zhangyu.fleamarket.card.CardViewModel;
+import com.zhangyu.fleamarket.http.protoapi.ActionCardViewProtoModelDemoImpl;
 
 
 /**
@@ -27,7 +28,7 @@ public class DemoCardModelUtils {
     return new DemoCardModel() {
       @Override
       public CardViewModel getCardViewModel() {
-        return null;//new ActionCardViewProtoModelVideoImpl(video, type);
+        return new ActionCardViewProtoModelDemoImpl(video, type);
       }
 
 //      @Override

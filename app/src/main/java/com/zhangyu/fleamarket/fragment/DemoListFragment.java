@@ -28,7 +28,7 @@ public class DemoListFragment
 
   private static long specialId;
 
-  public static DemoListFragment newInstance() {
+  public static DemoListFragment newInstance(long specialId) {
     DemoListFragment demoListFragment = new DemoListFragment();
     Bundle bundle = new Bundle();
     bundle.putLong(KEY_SPECIAL_ID, specialId);

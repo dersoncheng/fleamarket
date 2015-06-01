@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">FleaMarket</string>
 
+    <plurals name="view_count">
+        <item quantity="one">%s view</item>
+        <item quantity="other">%s views</item>
+    </plurals>
+
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
@@ -13,6 +18,7 @@
     <string name="action_settings">Settings</string>
     <string name="about_dialog_version">Version: </string>
 
+    <string name="download">Download</string>
     <string name="share">Share</string>
     <string name="retry">RETRY</string>
     <string name="flea_last_modify_time">%1$d/%2$d Updated</string>
@@ -26,4 +32,13 @@
     <string name="no_network">No network connection, connect and try again.</string>
     <string name="open_connection_setting">Network settings</string>
     <string name="flea_search_no_result_tips">Erm... Nothing found here</string>
+
+    <string name="video_today">today</string>
+    <string name="video_days_ago">day(s) ago</string>
+    <string name="video_month_ago">month(s) ago</string>
+    <string name="video_weeks_ago">week(s) ago</string>
+    <string name="video_years_ago">year(s) ago</string>
+    <string name="flea_one_million">%1$sM</string>
+    <string name="flea_one_thound">%1$sK</string>
+    <string name="flea_count_one_thousand">%1$s</string>
 </resources>

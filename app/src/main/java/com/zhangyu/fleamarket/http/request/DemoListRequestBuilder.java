@@ -9,7 +9,7 @@ import com.zhangyu.fleamarket.http.PaginationRequestBuilder;
  */
 public class DemoListRequestBuilder extends PaginationRequestBuilder {
 
-  public static final String URL = ApiConfig.API_HOST + "/v2/video/MV/special/detail";
+  public static final String URL = ApiConfig.API_HOST + "/v2/video/toplist/topdownload";
 
   private static final String ID = "id";
 

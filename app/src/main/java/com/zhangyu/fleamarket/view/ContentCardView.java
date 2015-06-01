@@ -42,9 +42,9 @@ public class ContentCardView extends RelativeLayout implements BaseContentCardVi
   private TextView downloadSpeed;
   private TextView downloadStatus;
   private TextView downloadSize;
+  private ProgressBar downloadProgress;
   private TextView iconTips;
   private StatefulImageView actionImageView;
-  private ProgressBar downloadProgress;
   private int progressAnchorId;
 
   public ContentCardView(Context context, AttributeSet attrs) {
@@ -192,7 +192,7 @@ public class ContentCardView extends RelativeLayout implements BaseContentCardVi
 
       @Override
       public AsyncImageView getBannerView() {
-        return banner;
+        return null;//banner;
       }
 
       @Override

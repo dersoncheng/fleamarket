@@ -13,6 +13,9 @@ import com.zhangyu.fleamarket.fragment.DemoListFragment;
 import com.zhangyu.fleamarket.fragment.PictureListFragment;
 
 public class ExplorerActivity extends BaseActivity {
+  private static final String KEY_SPECIAL_ID = "special_id";
+  private long specialId;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -23,6 +26,7 @@ public class ExplorerActivity extends BaseActivity {
     if (intent == null) {
       return;
     }
+    specialId = intent.getLongExtra(KEY_SPECIAL_ID, 0);
     navigateToItemInternal(null);
   }
 
@@ -39,7 +43,7 @@ public class ExplorerActivity extends BaseActivity {
 //      }
 //      ft.replace(android.R.id.content, pictureListFragment);
 
-      DemoListFragment demoListFragment = DemoListFragment.newInstance();
+      DemoListFragment demoListFragment = DemoListFragment.newInstance(specialId);
       if (extras != null) {
         demoListFragment.setArguments(extras);
       }

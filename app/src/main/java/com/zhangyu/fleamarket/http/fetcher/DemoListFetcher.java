@@ -1,6 +1,6 @@
 package com.zhangyu.fleamarket.http.fetcher;
 
-import com.wandoujia.em.common.proto.GetMVSpecialDetailResp;
+import com.wandoujia.em.common.proto.GetVideoTopListResultResp;
 import com.wandoujia.em.common.proto.Video;
 import com.zhangyu.fleamarket.app.FleaMarketApplication;
 import com.zhangyu.fleamarket.http.delegate.DemoListDelegate;
@@ -28,10 +28,10 @@ public class DemoListFetcher extends BaseFetcher<Video> {
     } else {
       delegate.getRequestBuilder().setSpecialId(specialId).setStart(nextoffset).setNumber(size);
     }
-    GetMVSpecialDetailResp videoListResult = FleaMarketApplication.getDataApi().execute(delegate);
+    GetVideoTopListResultResp videoListResult = FleaMarketApplication.getDataApi().execute(delegate);
     if (videoListResult != null && videoListResult.getNextOffset() != null) {
       nextoffset = videoListResult.getNextOffset();
-      return videoListResult.getVideoList();
+      return videoListResult.getVideosList();
     }
     return null;
   }
