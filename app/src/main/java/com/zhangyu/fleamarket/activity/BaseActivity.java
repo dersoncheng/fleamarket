@@ -47,7 +47,9 @@ public abstract class BaseActivity extends SherlockFragmentActivity {
 
   @Override
   protected void onRestart() {
-    //launcherLogger.activityOnRestart(this, getIntent());
+    if (launcherLogger != null) {
+      launcherLogger.activityOnRestart(this, getIntent());
+    }
     super.onRestart();
   }
 
@@ -74,7 +76,9 @@ public abstract class BaseActivity extends SherlockFragmentActivity {
 
   @Override
   protected void onUserLeaveHint() {
-    launcherLogger.activityOnUserLeave(this);
+    if (launcherLogger != null) {
+      launcherLogger.activityOnUserLeave(this);
+    }
 
     super.onUserLeaveHint();
   }
@@ -82,7 +86,9 @@ public abstract class BaseActivity extends SherlockFragmentActivity {
   @Override
   protected void onDestroy() {
     --activitiesInStack;
-    launcherLogger.activityOnDestroy(this);
+    if (launcherLogger != null) {
+      launcherLogger.activityOnDestroy(this);
+    }
 
     super.onDestroy();
   }
