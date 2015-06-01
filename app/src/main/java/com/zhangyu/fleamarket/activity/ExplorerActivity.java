@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.zhangyu.fleamarket.R;
+import com.zhangyu.fleamarket.fragment.DemoListFragment;
 import com.zhangyu.fleamarket.fragment.PictureListFragment;
 
 public class ExplorerActivity extends BaseActivity {
@@ -32,17 +33,17 @@ public class ExplorerActivity extends BaseActivity {
     if (currentFragment instanceof PictureListFragment) {
       return;
     } else {
-      PictureListFragment pictureListFragment = PictureListFragment.newInstance();
-      if (extras != null) {
-        pictureListFragment.setArguments(extras);
-      }
-      ft.replace(android.R.id.content, pictureListFragment);
-
-//      DemoListFragment demoListFragment = DemoListFragment.newInstance();
+//      PictureListFragment pictureListFragment = PictureListFragment.newInstance();
 //      if (extras != null) {
-//        demoListFragment.setArguments(extras);
+//        pictureListFragment.setArguments(extras);
 //      }
-//      ft.replace(android.R.id.content, demoListFragment);
+//      ft.replace(android.R.id.content, pictureListFragment);
+
+      DemoListFragment demoListFragment = DemoListFragment.newInstance();
+      if (extras != null) {
+        demoListFragment.setArguments(extras);
+      }
+      ft.replace(android.R.id.content, demoListFragment);
     }
     ft.commitAllowingStateLoss();
   }

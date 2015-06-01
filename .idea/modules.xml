@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidStaggeredGrid/AndroidStaggeredGrid.iml" filepath="$PROJECT_DIR$/AndroidStaggeredGrid/AndroidStaggeredGrid.iml" />
       <module fileurl="file://$PROJECT_DIR$/FleaMarket.iml" filepath="$PROJECT_DIR$/FleaMarket.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FleaMarket.iml" filepath="$PROJECT_DIR$/FleaMarket.iml" />
       <module fileurl="file://$PROJECT_DIR$/external/actionbarsherlock/actionbarsherlock.iml" filepath="$PROJECT_DIR$/external/actionbarsherlock/actionbarsherlock.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework/base/base.iml" filepath="$PROJECT_DIR$/framework/base/base.iml" />
@@ -25,4 +24,3 @@
     </modules>
   </component>
 </project>
-

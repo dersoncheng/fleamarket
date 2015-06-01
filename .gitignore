@@ -1,10 +1,17 @@
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
+.gradle/
+.idea/
+out/
+obj/
+bin/
+gen/
+build/
+.classpath
+.project
 .DS_Store
+.settings
+local.properties
 *.iml
-/build
-/external
-/framework
+packages/phoenix/*lint*.xml
+.directory
+gradle/
 
